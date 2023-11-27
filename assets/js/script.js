@@ -66,7 +66,10 @@ document.addEventListener("DOMContentLoaded", function() {
               unknownAnswers++;
               if (currentQuestion <=  quizData.length -1) 
               {
+                alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
+
                 currentQuestion++;
+                
                 runQuiz();
               } 
           } 
@@ -74,6 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
           {
             let choise = this.getAttribute("data-type");
             checkAnswer(choise);
+
+            
+
             runQuiz();
           }
       });
@@ -90,7 +96,7 @@ function runQuiz() {
   console.log(`current question: ${currentQuestion}`);
   if (currentQuestion >= quizData.length) 
             {
-              alert(`Game Over - Again?`);  
+              alert(`Game Over`);  
                     
               currentQuestion = 0;
               correctAnswers = 0;
@@ -153,6 +159,9 @@ function checkAnswer(userEvent) {
   if (userAnswer === correctAnswer) {
     correctAnswers++;
   } else {
+
+    alert(`Wrong Answer, the correct answer was: ${correctAnswer}`);
+
     inCorrectAnswers++;
   }
 
