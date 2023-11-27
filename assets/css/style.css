@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color:  #0C134F;
-    --sec-bg-color: #1D267D; 
+    --main-bg-color:  #0C134F80;
+    --sec-bg-color: #1D267D80; 
     --sec-text-color: #5C469C; 
     --main-text-color: #D4ADFC;   
          
@@ -14,8 +14,25 @@ body {
     font-family: "Raleway", sans-serif;
     color: white;
     text-align: center;
+    width: 100%;
+    height: 800px; /* Set your desired height */
+    background-image: url("../images/universe.jpeg");
+    background-size: cover; /* This will cover the entire container */
+    
+    /* background-size: 100% 100%; /* This will stretch the image */
+    background-repeat: no-repeat;
+  
+    
+
 }
 
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
 /* --------- Heading */
 
 .heading {
@@ -23,9 +40,10 @@ body {
     font-size: 2.5rem;
 }
 
-.logo {
-    height: 40px;
-    padding-right: 5px;
+.banner {
+    height: 250px;
+    padding: 25px;
+    /* padding-right: 5px; */
 }
 
 /* --------- Game layout */
@@ -33,15 +51,18 @@ body {
 .game-area {
    /* background-color: var(--sec-bg-color); */
     background-color: var(--sec-bg-color);
-    font-size: large;
+    font-size: 2rem;
     box-sizing: border-box;
-    width: 95%;
-    height: 75vh;
-    max-height: 500px;
-    max-width: 800px;
+    /* width: 95%; */
+    /* height: 75vh; */
+    max-height: 800px; 
+    max-width: 1000px; 
     margin-left: auto;
-    margin-right: auto;
-    padding: 1%;
+    margin-right: auto; 
+    padding: 10px;
+    border: 3px solid;
+    border-radius: 30px;
+    
 }
 
 .question-area {
@@ -56,16 +77,29 @@ body {
 }
 
 .score-area {
-    margin: 5px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px auto 30px;
     width: 80%;
+    height: 40px;
     font-size: 1.25rem;
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    border: 1.5px solid;
+    
 }
 
 .controls-area {
-    padding: 35px;
-    width: 85%;
-    margin: 30px auto;
-    background-color: var(--sec-bg-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex; 
+    justify-content: space-evenly;
+    /* padding: 5px; */
+   /*  width: 85%; */
+    /* margin: 10px 10px;
+    
+ /*   background-color: var(--main-bg-color);*/
  }
 
 
@@ -98,29 +132,21 @@ body {
     font-size: 1.2rem;
 }
 
-.scores {
-    display: inline-block;
-    /* padding: 25px; */
-}
-
-/* --------- Buttons */
+/* --------- Buttons 
 button {
-    background-color: aqua;
+    background-color: magenta;
     font: bolder;
-}
+} */
 
 .btn {
    /* width: 125px;*/
+   border-radius: 10px;
    padding: 10px;
-
-    height: 70px;
-
-    font-family: "Raleway", sans-serif;
    
-    
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--sec-bg-color);
+    color: white;
+
 }
 
 .btn:focus {
@@ -131,10 +157,10 @@ button {
     padding: 5px;
     /*border-radius: 50%; */
     
-    background-color: white;
+    background-color: black;
     border: 5px solid;
-    /* width: 100px; */
-    height: 75px;
+     /* width: 150px; */
+    height: 50px;
    /* font-size: 1rem; */
     /* margin: 0 20px; */
     transition: all 0.5s;
@@ -147,20 +173,22 @@ button {
     left: -0.5em; */
 }
 
-.btn--blue {
-    border-color: blue;
-    color: blue;
+.btn--magenta {
+    border-color: magenta;
+    color: violet;
+    padding: 10px;
 }
 
-.btn--blue:active,
-.btn--blue:hover {
-    background-color: darkblue;
+.btn--magenta:active,
+.btn--magenta:hover {
+    background-color: violet;
     color: white;
 }
 
 .btn--orange {
     border-color: orange;
     color: orange;
+    padding: 10px;
 }
 
 .btn--orange:active,
@@ -172,6 +200,7 @@ button {
 .btn--red {
     border-color: red;
     color: red;
+    padding: 10px;
 }
 
 .btn--red:active,
@@ -181,8 +210,9 @@ button {
 }
 
 .btn--green {
-    border-color: green;
-    color: green;
+    border-color: yellowgreen;
+    color: yellowgreen;
+    padding: 10px;
 }
 
 .btn--green:active,
@@ -192,17 +222,28 @@ button {
 }
 
 .btn--gray {
-    margin-top: 25px;
-    /* background-color: gray; */
-    border: 1px transparent;
-    border-radius: 20px;
+    padding: 30px;
+    /* margin-top: 25px; */
+    background-color: gray; 
+    border: 1px solid;
+    
+    /* border-style:outset; */
+    /* border-radius: 20px; */
+    transition: all 0.5s;
+    margin-bottom: 30px;
+    
 }
 
 .btn--gray:active,
 .btn--gray:hover {
-    background-color: #0d1013;
+    background-color: lightgray;
+    color: black;
 }
 
+#messageQuestion {
+    color: gold;
+    padding: 10px;
+}
 /* --------- Media queries */
 
 @media (max-width: 414px) {
@@ -249,11 +290,11 @@ button {
         width: 100%;
     }
 
-    .scores {
+  /*  .scores {
         margin: 0.5em auto;
         display: block;
         padding: 5px;
-    }
+    } */
 
     .heading {
         font-size: 2rem;
