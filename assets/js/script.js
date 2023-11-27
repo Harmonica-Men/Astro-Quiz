@@ -56,11 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 currentQuestion++;
                 runQuiz();
               } 
-              else 
-              {
-                alert(`Game Over - Again?`);        
-              }; 
-
           } 
           else 
           {
@@ -68,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
             checkAnswer(choise);
             runQuiz();
           }
-          
       });
   }
   runQuiz();
@@ -81,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runQuiz() {
   console.log(`current question: ${currentQuestion}`);
-  if (currentQuestion >  quizData.length -1) 
+  if (currentQuestion >= quizData.length) 
             {
               alert(`Game Over - Again?`);  
                     
@@ -149,7 +143,7 @@ function checkAnswer(userEvent) {
     inCorrectAnswers++;
   }
 
-  if (currentQuestion <  quizData.length -1) {
+  if (currentQuestion <  quizData.length) {
     currentQuestion++;
   } 
   
