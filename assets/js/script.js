@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runQuiz() {
   console.log(`current question: ${currentQuestion}`);
-  if (currentQuestion >=  quizData.length -1) 
+  if (currentQuestion >  quizData.length -1) 
             {
               alert(`Game Over - Again?`);  
                     
@@ -122,6 +122,7 @@ function showScore() {
   document.getElementById("incorrect").innerText = inCorrectAnswers;
   document.getElementById("unknown").innerText = unknownAnswers;
   document.getElementById("maxQuestion").innerText = quizData.length;
+  document.getElementById("question").innerText = currentQuestion + 1;
 }
 
 function checkAnswer(userEvent) {
