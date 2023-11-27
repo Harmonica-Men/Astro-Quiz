@@ -2,18 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz Game</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Astro Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome and google fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- where is the style  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Astro Quiz</h1>
-    <div id="question"></div>
-    <div id="choices"></div>
-    <button onclick="nextQuestion()">Next</button>
-    <p id="score"></p>
-  </div>
-  <script src="assets/js/script.js"></script>
+
+  <body>
+    <h1 class="heading">
+        <img class="banner" src="assets/images/astro-quiz.webp" alt="Banner for the Astro-Quiz"> 
+        <br>
+        Astro Quiz
+    </h1>
+
+    <h2>How much do you know about the Univers?</h2>
+    <h3>Question are more important than Answers?</h3>
+    <br>
+    <div class="game-area">
+      <br>
+          <p>Questions</p>
+        <br>
+        <div class="quest">
+            <p class="answer-message">A</p>
+        </div>
+
+      <br>
+
+      <div id="messageQuestion"></div>
+
+
+      <div class="controls-area">
+        <button data-type="A" class="btn btn--big btn--green " id="option0"></button>
+        <button data-type="B" class="btn btn--big btn--red" id="option1"></button>
+        <button data-type="C" class="btn btn--big btn--blue" id="option2"></button>
+        <button data-type="D" class="btn btn--big btn--orange" id="option3"></button>
+      </div>
+
+
+     <!--     <span id="choices"></span> -->
+
+        <!-- <button onclick="nextQuestion()">Next</button> -->
+        <button data-type="X" class="btn btn--gray">Next Question!</button>
+    </div>
+
+    <div class="score-area">
+        <p class="scores">
+          Correct Answers: 
+          <span id="correct">0</span>
+        </p>
+        <p class="scores">
+          Incorrect Answers:
+          <span id="incorrect">0</span>
+        </p>
+        <p class="scores">
+          Unknown Answers: 
+          <span id="unknown">0</span>
+        </p>
+        <p class="scores">
+          Total Questions:  
+          <span id="maxQuestion">0</span>
+        </p>
+    </div>
+    
+    <!-- where is the javascript -->
+    <script src="assets/js/script.js"></script>
 </body>
 
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
