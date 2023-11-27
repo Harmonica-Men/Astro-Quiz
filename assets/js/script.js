@@ -35,7 +35,20 @@ const quizData = [
     question: "One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
     choices: ["Callisto", "Venus", "Titan", "Mars"],
     answer: "MARS"
-  }
+  },
+  {
+    question: "Of the following four times, which one best represents the time it takes energy generated in the core of the sun to reach the surface of the sun and be radiated?",
+    choices: ["Three minutes", "Thirty days", "One thousand years", "One million years"],
+    answer: "ONE MILLION YEARS"
+  },
+  {
+    question: "The sunspot cycle is:",
+    choices: ["3 years", "11 years", "26 years", "49 years"],
+    answer: "11 YEARS"
+  },
+
+
+
   // Add more quizData here
 ];
 
