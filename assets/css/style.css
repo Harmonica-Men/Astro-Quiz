@@ -92,13 +92,13 @@ img {
 
 .score-area {
      display: flex; 
-     flex-wrap: wrap;
+     flex-wrap: nowrap;
      padding: 10px;
     
     justify-content: space-around;
     align-items: center;
     margin: 5px auto 30px;
-    width: 80%;
+    width: 60%;
     
     font-size: 1.25rem;
     background-color: var(--main-bg-color);
