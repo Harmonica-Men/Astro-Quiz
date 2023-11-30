@@ -169,7 +169,7 @@ button {
     padding: 5px;
     background-color: black;
     border: 5px solid;
-    width: 150px; 
+  /*  width: 150px;  */
     height: 75px;
     font-size: 1rem; 
     /* margin: 0 20px; */
