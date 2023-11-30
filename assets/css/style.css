@@ -15,15 +15,19 @@ body {
     color: white;
     text-align: center;
     width: 100%;
-    height: 800px; /* Set your desired height */
+   /* height: 1100px; /* Set your desired height */
     background-image: url("../images/universe.jpeg");
-    background-size: cover; /* This will cover the entire container */
+    background-size: cover;
     
-    /* background-size: 100% 100%; /* This will stretch the image */
+   /*  background-size: 100% 100%; /* This will stretch the image */
     background-repeat: no-repeat;
   
     
 
+}
+
+h2 {
+    font-size: 1.5rem;
 }
 
 h4 {
@@ -33,32 +37,43 @@ h4 {
 p {
     font-size: 1rem;
 }
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  
 /* --------- Heading */
 
 .heading {
     text-align: center;
     font-size: 2.5rem;
+    
 }
 
-.banner {
+/* .banner {
     height: 250px;
     padding: 25px;
-    /* padding-right: 5px; */
-}
 
+    /* padding-right: 5px; 
+}
+*/
 /* --------- Game layout */
 
 .game-area {
    /* background-color: var(--sec-bg-color); */
     background-color: var(--sec-bg-color);
     font-size: 2rem;
-    box-sizing: border-box;
-    /* width: 95%; */
+   /* box-sizing: border-box; */
+    /* margin: 10px; */
+    /* max-width: max-content; */
+     width: 91%; 
     /* height: 75vh; */
-    max-height: 800px; 
+    /*max-height: 800px; 
     max-width: 1000px; 
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto; */
     padding: 10px;
     border: 3px solid;
     border-radius: 30px;
@@ -77,12 +92,15 @@ p {
 }
 
 .score-area {
-    display: flex;
-    justify-content: space-evenly;
+     display: flex; 
+     flex-wrap: wrap;
+     padding: 10px;
+    
+    justify-content: space-around;
     align-items: center;
     margin: 5px auto 30px;
     width: 80%;
-    height: 40px;
+    
     font-size: 1.25rem;
     background-color: var(--main-bg-color);
     border-radius: 20px;
@@ -90,11 +108,26 @@ p {
     
 }
 
+.container-controls {
+   /*  margin-bottom: 100px; */
+   /* flex-wrap: wrap; */
+
+}
+
 .controls-area {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex; 
-    justify-content: space-evenly;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+    /* align-items: center; */
+    /*flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-around; 
+    /* margin: 0 auto; */
+    /*width: 75%;*/
+
+    /* padding-top: 20px; */ 
+    /* padding-bottom: 20px; */
+    
     /* padding: 5px; */
    /*  width: 85%; */
     /* margin: 10px 10px;
@@ -114,7 +147,7 @@ p {
 }
 
 #unknown {
-    color: yellow;
+    color: lightgrey;
     font-weight: bold;
 }
 
@@ -132,16 +165,15 @@ p {
     font-size: 1.2rem;
 }
 
-/* --------- Buttons 
+
 button {
-    background-color: magenta;
-    font: bolder;
-} */
+    margin: 10px;
+} 
 
 .btn {
    /* width: 125px;*/
    border-radius: 10px;
-   padding: 10px;
+/*   padding: 10px; */
    
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -159,9 +191,9 @@ button {
     
     background-color: black;
     border: 5px solid;
-     /* width: 150px; */
-    height: 50px;
-   /* font-size: 1rem; */
+    width: 150px; 
+    height: 75px;
+    font-size: 1rem; 
     /* margin: 0 20px; */
     transition: all 0.5s;
 }
@@ -176,7 +208,7 @@ button {
 .btn--magenta {
     border-color: magenta;
     color: violet;
-    padding: 10px;
+    
 }
 
 .btn--magenta:active,
@@ -222,15 +254,18 @@ button {
 }
 
 .btn--gray {
-    padding: 30px;
-    /* margin-top: 25px; */
+    /* padding: 30px; */
+    padding-left: 10px;
+    padding-right: 10px;
+   
     background-color: gray; 
     border: 1px solid;
-    
+    font-size: 1.5rem;
     /* border-style:outset; */
-    /* border-radius: 20px; */
+    height: 7vh;
+    border-radius: 20px; 
     transition: all 0.5s;
-    margin-bottom: 30px;
+    margin-bottom: 30px; 
     
 }
 
@@ -244,20 +279,64 @@ button {
     color: gold;
     padding: 10px;
 }
-/* --------- Media queries */
+
+#correct {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#incorrect {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#unknown {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+@media (max-width: 800px) {
+    .score-area {
+        font-size: 1rem;
+        /* width: 250px; */
+       /* height: 90px;*/
+       padding: 10px;
+         border-radius: 10px;
+         flex-wrap: nowrap;
+    }
+
+   
+
+    }
+ 
+
 
 @media (max-width: 414px) {
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+    
+    img {
+        width: auto;
+        height: auto;
+    }
+          
     .controls-area {
-        width: 100%;
+        /* width: 80%; */
     }
 
     .btn--big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
+        /*  margin: 0 10px; */
+       /* padding: 5px;
+        border: 5px solid; */
+        width: 150px;
         height: 50px;
-        font-size: 1.5rem;
+        font-size: 0.85rem;
     }
 
     .btn--big::after {
@@ -282,12 +361,21 @@ button {
         display: block;
         margin: 0 auto;
     }
+    
+
     .btn--gray {
-        margin-top: 0;
+        align-items: center;
+        width: 150px;
+        height: 50px;
+        font-size: 0.85rem;
+
     }
 
+
+
     .score-area {
-        width: 100%;
+        width: 75%;
+        font-size: 0.95rem;
     }
 
   /*  .scores {
@@ -299,14 +387,18 @@ button {
     .heading {
         font-size: 2rem;
     }
+
+    #messageQuestion {
+        font-size: medium;
+    }
 }
 
-@media (max-width: 320px) {
-    .game-area {
+@media (max-width: 350px) {
+    /*.game-area {
         height: 70vh;
     }
-
-    .controls-area {
+*/
+  /*  .controls-area {
         width: 75%;
         margin: 10px auto;
     }
@@ -316,6 +408,19 @@ button {
     }
     .question-area {
         padding: 10px 0;
+    }*/
+    .btn--gray {
+        
+        font-size: 0.8rem;
     }
+
+
+    .score-area {
+        flex-direction: column;
+        height: auto;
+        width: 50%;
+        
+    }
+
 
 }
