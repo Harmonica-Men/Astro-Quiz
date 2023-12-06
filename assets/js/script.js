@@ -31,7 +31,7 @@ const quizData = [
     choices: ["111 days", "88 days", "50 days", "25 days"],
     answer: "88 DAYS"
   },
-  {
+/*  {
     question: "5 One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
     choices: ["Callisto", "Venus", "Titan", "Mars"],
     answer: "MARS"
@@ -47,7 +47,7 @@ const quizData = [
     answer: "11 YEARS"
   },
 
-
+*/
 
   // Add more quizData here
 ];
@@ -63,18 +63,18 @@ document.addEventListener("DOMContentLoaded", function()
   {
     button.addEventListener("click", function() 
     {
+      let skip = true;
       if (this.getAttribute("data-type") === "X") 
       {
         unknownAnswers++;
-        if (currentQuestion < quizData.length - 1 && currentQuestion > -1) 
+        if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
         {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-          // currentQuestion++;
-          runQuiz();
+          skip = false;
         } 
         else
         {
-          // alert('game over');
+         /*  alert('game over');*/
           currentQuestion = -1;
           correctAnswers = 0;
           inCorrectAnswers = 0;
@@ -86,16 +86,31 @@ document.addEventListener("DOMContentLoaded", function()
         let choise = this.getAttribute("data-type");
         
         
-        if (currentQuestion < quizData.length - 1) 
-         {
-          currentQuestion++;
-          checkAnswer(choise);
-         }
-         else
+        if (currentQuestion <= quizData.length - 1 && skip == true) 
          {
           
-            checkAnswer(choise);
-           currentQuestion = -1; 
+          console.log("A",currentQuestion);
+          // alert("stopA");
+          // if (currentQuestion > 0) 
+          checkAnswer(choise);
+            currentQuestion++;
+           
+         }
+
+       
+         else
+         {
+           // alert("stopB");
+             currentQuestion++;
+             console.log("B",currentQuestion);
+           if (currentQuestion > quizData.length -1) 
+           {
+            currentQuestion = -1; 
+            // alert("stopB");
+           }
+           //checkAnswer(choise);
+           // showScore(); 
+            // currentQuestion = -1; 
          }
 
          
@@ -113,16 +128,17 @@ document.addEventListener("DOMContentLoaded", function()
  */
 function runQuiz() 
 {
-  console.log(currentQuestion);
-  if (currentQuestion <= quizData.length && currentQuestion > -1  )
+  
+  if (currentQuestion <= quizData.length && currentQuestion > -1)
   {
     showQuestion();
   } 
   else
   {
     showResults();
-  }  
-  showScore(); 
+  } 
+  showScore();  
+  
 }
 
 // Show results of quiz 
@@ -208,8 +224,8 @@ function answerCorrect(answer) {
 
 
 function checkAnswer(userEvent) {
-  
-  if (currentQuestion > 0) {
+  let userAnswer = "";
+  if (currentQuestion >= 0) {
   const correctAnswer = quizData[currentQuestion].answer;
 
     if (userEvent === "A") {
@@ -226,16 +242,32 @@ function checkAnswer(userEvent) {
     }
     userAnswer = userAnswer.toUpperCase();
 
-  if (userAnswer === correctAnswer) {    
+  if (userAnswer === correctAnswer) 
+  {    
     answerCorrect(true);
     correctAnswers++;
+    // alert("stop here");
+    if (correctAnswers > quizData.length -1) 
+           {
+            currentQuestion = -1; 
+            alert("stop now");
+            
+            
+           }
   } 
   else 
   {
     answerCorrect(false);
     inCorrectAnswers++;
+    if (inCorrectAnswers >= quizData.length -1) 
+           {
+            currentQuestion = -1; 
+            // alert("stopB");
+            // runQuiz();
+           }
+  } 
   }
-  }
+  
   
     
    
