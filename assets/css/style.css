@@ -112,33 +112,20 @@ img {
     color: yellow;
  }
 
-
-
-
 .container-socials {
+  padding: 20px;
   display: flex; /* Use flexbox */
   flex-direction: row; /* Arrange in a row */
   flex-wrap: wrap; /* Allow wrapping */
-  height: 200px; /* Set height */
+  height: 100px; /* Set height */
   align-items: center; /* Align items */
   justify-content: space-around; /* Spread items */
+  font-size: 3rem;
+  color: yellow; 
 }
 
 
-.box-socials {
-    display: flex; /* Use flexbox */
-    width: 80px; /* Set width */
-    height: 80px; /* Set height */
-    font-size: 3rem; /* Set font size */
-    border: solid var(--border-color); /* Set border */
-    text-align: center; /* Center align text */
-    border-radius: 15px; /* Add border radius */
-    border-style: ridge; /* Ridge border style */
-    justify-content: center; /* Center justify content */
-    align-items: center; /* Align items */
-    background: var(--main-bg-color); /* Set background color */
-    background-color: var(--main-bg-color); /* Redundant background color */
-  }
+
 
 
 
@@ -385,15 +372,32 @@ button {
         font-size: 2rem;
     }
 
+
+     /* Flexbox adjustments for social media container */
+    .container-socials {
+    justify-content: space-evenly; /* Space items evenly */ 
+    font-size: 1.85rem;
+    }
+
+    #end {
+        font-size: 0.85rem;
+    }
+
+
+
+
     #messageQuestion {
         font-size: medium;
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 344px) {
   
     .btn--gray {       
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        width: 125px;
+        height: 75px;
+        
     }
     
     .score-area {
@@ -403,3 +407,16 @@ button {
     }
 
 }
+
+
+@media (max-width: 180px) {
+    .btn--gray {
+        width: 90px;
+        height: 55px;
+        font-size: 0.7rem;
+
+    }
+
+
+}
+  
