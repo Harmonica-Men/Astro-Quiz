@@ -155,16 +155,19 @@ function showQuestion() {
   let optionCelement = document.getElementById('optionC');
   let optionDelement = document.getElementById('optionD');
 
-// quizQuestions.innerHTML = '';
+  document.getElementById('optionA').style.display = 'initial';
+  document.getElementById('optionB').style.display = 'initial';
+  document.getElementById('optionC').style.display = 'initial';
+  document.getElementById('optionD').style.display = 'initial';
 
-if (currentQuestion < quizData.length) {
-    messageQuestionElement.textContent =  quizItem.question;
-    optionAelement.textContent = quizItem.choices[0];
-    optionBelement.textContent = quizItem.choices[1];
-    optionCelement.textContent = quizItem.choices[2];
-    optionDelement.textContent = quizItem.choices[3]; 
+  if (currentQuestion < quizData.length) {
+      messageQuestionElement.textContent =  quizItem.question;
+      optionAelement.textContent = quizItem.choices[0];
+      optionBelement.textContent = quizItem.choices[1];
+      optionCelement.textContent = quizItem.choices[2];
+      optionDelement.textContent = quizItem.choices[3]; 
+    }
   }
-}
 
 function showScore() {
   document.getElementById("correct").innerText = correctAnswers;
