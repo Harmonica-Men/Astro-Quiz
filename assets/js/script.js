@@ -53,31 +53,56 @@ const quizData = [
 ];
 
 // booting up the DOM then run the Quiz
-// button elements YES - NO for event handelers to listen
+// button elements A,B,C,D for event handelers to listen
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() 
+{
   let buttons = document.getElementsByTagName("button");
 
-  for (let button of buttons) {
-      button.addEventListener("click", function() 
+  for (let button of buttons) 
+  {
+    button.addEventListener("click", function() 
+    {
+      if (this.getAttribute("data-type") === "X") 
       {
-          if (this.getAttribute("data-type") === "X") 
-          {
-              unknownAnswers++;
-              if (currentQuestion < quizData.length) 
-              {
-                alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-                currentQuestion++;
-                runQuiz();
-              } 
-          } 
-          else document.getElementById("next-question").innerText = 'New Game ?';
-          {
-            let choise = this.getAttribute("data-type");
+        unknownAnswers++;
+        if (currentQuestion < quizData.length - 1 && currentQuestion > -1) 
+        {
+          alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
+          // currentQuestion++;
+          runQuiz();
+        } 
+        else
+        {
+          // alert('game over');
+          currentQuestion = -1;
+          correctAnswers = 0;
+          inCorrectAnswers = 0;
+          unknownAnswers = 0; 
+        }
+      } 
+      else document.getElementById("next-question").innerText = 'New Game ?';
+      {
+        let choise = this.getAttribute("data-type");
+        
+        
+        if (currentQuestion < quizData.length - 1) 
+         {
+          currentQuestion++;
+          checkAnswer(choise);
+         }
+         else
+         {
+          
             checkAnswer(choise);
-            runQuiz();
-          }
-      });
+           currentQuestion = -1; 
+         }
+
+         
+
+        runQuiz();
+      }
+    });
   }
   runQuiz();
 });
@@ -86,26 +111,16 @@ document.addEventListener("DOMContentLoaded", function() {
 /**
  * Main loop
  */
-function runQuiz() {
-  console.log(`current question: ${currentQuestion}`);
-  if (currentQuestion < quizData.length) 
+function runQuiz() 
+{
+  console.log(currentQuestion);
+  if (currentQuestion <= quizData.length && currentQuestion > -1  )
   {
     showQuestion();
   } 
   else
   {
     showResults();
-    // alert('Game Over');
-
-    /* currentQuestion = 0;
-    correctAnswers = 0;
-    inCorrectAnswers = 0;
-    unknownAnswers = 0; */
-
-     
-
-
-
   }  
   showScore(); 
 }
@@ -150,7 +165,7 @@ function showQuestion() {
 
   document.getElementById("next-question").innerText = 'next question';
 
-  if (currentQuestion < quizData.length) {
+  if (currentQuestion < quizData.length && currentQuestion > -1) {
       messageQuestionElement.textContent =  quizItem.question;
       optionAelement.textContent = quizItem.choices[0];
       optionBelement.textContent = quizItem.choices[1];
@@ -163,8 +178,8 @@ function showScore() {
   document.getElementById("correct").innerText = correctAnswers;
   document.getElementById("incorrect").innerText = inCorrectAnswers;
   document.getElementById("unknown").innerText = unknownAnswers;
-  document.getElementById("maxQuestion").innerText = quizData.length;
-  document.getElementById("question").innerText = currentQuestion + 1;
+  //document.getElementById("maxQuestion").innerText = quizData.length;
+  //document.getElementById("question").innerText = currentQuestion + 1;
   
 }
 
@@ -194,6 +209,7 @@ function answerCorrect(answer) {
 
 function checkAnswer(userEvent) {
   
+  if (currentQuestion > 0) {
   const correctAnswer = quizData[currentQuestion].answer;
 
     if (userEvent === "A") {
@@ -219,10 +235,10 @@ function checkAnswer(userEvent) {
     answerCorrect(false);
     inCorrectAnswers++;
   }
-
-  if (currentQuestion <  quizData.length) {
-    currentQuestion++;
-  } 
+  }
+  
+    
+   
   
 }
 
