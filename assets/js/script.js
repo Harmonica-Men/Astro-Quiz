@@ -12,37 +12,37 @@ const answerElement = document.getElementById('answer');
 
 const quizData = [
   {
-    question: "The largest circular storm in our solar system is on the surface of which of the following planets?",
+    question: "1 The largest circular storm in our solar system is on the surface of which of the following planets?",
     choices: ["Jupiter", "Venus", "Uranus", "Earth"],
     answer: "JUPITER"
   },
   {
-    question: "The rapidly moving stream of charged particles that is being driven away from the sun is known as what?",
+    question: "2 The rapidly moving stream of charged particles that is being driven away from the sun is known as what?",
     choices: ["Star Dust", "Chared Particles", "Solar Wind", "Cosmic Rays"],
     answer: "SOLAR WIND"
   },
   {
-    question: "The biggest asteroid known is:",
+    question: "3 The biggest asteroid known is:",
     choices: ["Vesta", "Icarus", "Ceres", "Eros"],
     answer: "CERES"
   },
   {
-    question: "Rounded to the nearest day, the Mercurian year is equal to:",
+    question: "4 Rounded to the nearest day, the Mercurian year is equal to:",
     choices: ["111 days", "88 days", "50 days", "25 days"],
     answer: "88 DAYS"
   },
   {
-    question: "One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
+    question: "5 One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
     choices: ["Callisto", "Venus", "Titan", "Mars"],
     answer: "MARS"
   },
   {
-    question: "Of the following four times, which one best represents the time it takes energy generated in the core of the sun to reach the surface of the sun and be radiated?",
+    question: "6 Of the following four times, which one best represents the time it takes energy generated in the core of the sun to reach the surface of the sun and be radiated?",
     choices: ["Three minutes", "Thirty days", "One thousand years", "One million years"],
     answer: "ONE MILLION YEARS"
   },
   {
-    question: "The sunspot cycle is:",
+    question: "7 The sunspot cycle is:",
     choices: ["3 years", "11 years", "26 years", "49 years"],
     answer: "11 YEARS"
   },
@@ -64,12 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
           if (this.getAttribute("data-type") === "X") 
           {
               unknownAnswers++;
-              if (currentQuestion <=  quizData.length -1) 
+              if (currentQuestion < quizData.length) 
               {
                 alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-
                 currentQuestion++;
-                
                 runQuiz();
               } 
           } 
@@ -90,34 +88,37 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runQuiz() {
   console.log(`current question: ${currentQuestion}`);
-  
-  if (currentQuestion  >= quizData.length) 
-            {
-
-               showResults();
-                   // alert('Game Over')
-              currentQuestion = 0;
-              correctAnswers = 0;
-              inCorrectAnswers = 0;
-              unknownAnswers = 0;
-
-            } 
-  else
+  if (currentQuestion < quizData.length) 
   {
     showQuestion();
-  }
-  
-  
-  showScore();
-  
+  } 
+  else
+  {
+    showResults();
+    // alert('Game Over');
+
+    /* currentQuestion = 0;
+    correctAnswers = 0;
+    inCorrectAnswers = 0;
+    unknownAnswers = 0; */
+
+     
+
+
+
+  }  
+  showScore(); 
 }
 
 // Show results of quiz 
 function showResults() {
   var msgQuestion = document.getElementById('messageQuestion');
+  // var msgQuestionNumber = document.getElementById('question-para');
 
-  // messageQuestion
-  msgQuestion.innerHTML = 'Game Over - Press Button to Continue'
+   // msgQuestionNumber.innerHTML = 'bla';
+
+  quote.innerHTML = ''; 
+  msgQuestion.innerHTML = 'Game Over - Press Button to Continue';
 
   
   document.getElementById("next-question").innerText = 'New Game ?';
