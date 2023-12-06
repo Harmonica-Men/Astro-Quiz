@@ -96,7 +96,8 @@ function runQuiz() {
   
   if (currentQuestion >= quizData.length) 
             {
-              alert(`Game Over`);  
+
+              // alert(`Game Over`);  
                     
               currentQuestion = 0;
               correctAnswers = 0;
@@ -109,6 +110,7 @@ function runQuiz() {
   
   }
   showScore();
+  
 }
 
 
@@ -141,7 +143,38 @@ function showScore() {
   document.getElementById("unknown").innerText = unknownAnswers;
   document.getElementById("maxQuestion").innerText = quizData.length;
   document.getElementById("question").innerText = currentQuestion + 1;
+  
 }
+
+
+function answerCorrect(answer) {
+  var resultDiv = document.getElementById('result');
+
+
+
+  if (answer === true) {
+    resultDiv.innerHTML = '👍 Correct!';
+
+  }
+  else
+  {
+    resultDiv.innerHTML = '👎 Wrong answer';
+  }
+   
+  
+
+  // Fades after 5 seconds for both correct and wrong answers
+  setTimeout(function() {
+    resultDiv.style.opacity = '0';
+
+    // After 5 seconds, clear the innerHTML and bring opacity back to normal
+    setTimeout(function() {
+      resultDiv.innerHTML = ''; // Clears innerHTML
+      resultDiv.style.opacity = '1';
+    }, 1000); // After the fade-out (1 second transition), set opacity to 1
+  }, 1000); // Fades after 5 seconds (5000 milliseconds)
+}
+
 
 function checkAnswer(userEvent) {
   
@@ -162,15 +195,26 @@ function checkAnswer(userEvent) {
     userAnswer = userAnswer.toUpperCase();
 
   if (userAnswer === correctAnswer) {
+
+    answerCorrect(true);
     correctAnswers++;
-    
+
+
+     
+
   } else {
 
-    alert(`Wrong Answer, the correct answer was: ${correctAnswer}`);
+//    document.getElementById("optionA").innerText = 'fsdfqsdfqds';
+    // resultDiv.innerHTML = '👎 Wrong answer. Try again!';
 
-    document.getElementById("optionA").innerText = correctAnswer;
+    // alert(`Wrong Answer, the correct answer was: ${correctAnswer}`);
 
+    
+    answerCorrect(false);
     inCorrectAnswers++;
+
+    
+
   }
 
   if (currentQuestion <  quizData.length) {

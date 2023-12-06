@@ -286,6 +286,9 @@ button {
     padding-right: 8px;
 }
 
+#result {
+    transition: opacity 1s ease-in-out;
+  }
 
 @media (max-width: 800px) {
     .score-area {
