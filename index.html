@@ -22,54 +22,88 @@
       <img class="heading" src="assets/images/astro-quiz.webp" alt="Banner for the Astro-Quiz"> 
       
       <h2>How much do you know about the Universe?</h2>
-      
-    </Section>
+    </section>
 
-    <div class="game-area">
-      
-      <h4>Questions are more important than Answers?</h4>
+    <section main> 
+      <div class="game-area">
         
-        <div class="quest">
-            <p class="answer-message">A</p>
-        </div>      
-
-      <div id="messageQuestion"></div>
-      
-        <div class="controls-area">
-          <button data-type="A" class="btn btn--big btn--green " id="option0"></button>
-          <button data-type="B" class="btn btn--big btn--red" id="option1"></button>
-          <button data-type="C" class="btn btn--big btn--magenta" id="option2"></button>
-          <button data-type="D" class="btn btn--big btn--orange" id="option3"></button>
+        <h4>Questions are more important than Answers?</h4>
           
-          
-        </div>
-    
-        <p>
-          Question: <span id="question"></span> / <span id="maxQuestion"></span> 
-        </p>
+          <div class="quest">
+              <p class="answer-message">A</p>
+          </div>      
 
-        <button data-type="X" class="btn btn--gray">Next Question!</button>
-
-        <div class="score-area">
-          Correct Answers:<span id="correct">0</span> 
-          Incorrect Answers:<span id="incorrect">0</span>       
-          Unknown Answers:<span id="unknown">0</span> 
-        </div>
-
-  
-      
-
-     <!--     <span id="choices"></span> -->
-
-        <!-- <button onclick="nextQuestion()">Next</button> -->
+        <div id="messageQuestion"></div>
         
-    <!-- 
-
+          <div class="controls-area">
+            <button data-type="A" class="btn btn--big btn--green " id="option0"></button>
+            <button data-type="B" class="btn btn--big btn--red" id="option1"></button>
+            <button data-type="C" class="btn btn--big btn--magenta" id="option2"></button>
+            <button data-type="D" class="btn btn--big btn--orange" id="option3"></button>
+            
+            
+          </div>
       
+          <p>
+            Question: <span id="question"></span> / <span id="maxQuestion"></span> 
+          </p>
 
-      -->
+          <button data-type="X" class="btn btn--gray">Next Question!</button>
 
-    </div>
+          <div class="score-area">
+            Correct Answers:<span id="correct">0</span> 
+            Incorrect Answers:<span id="incorrect">0</span>       
+            Unknown Answers:<span id="unknown">0</span> 
+          </div>
+      </div>
+  </section> 
+
+  <footer>
+    <!-- Footer section containing social links and copyright information -->
+    <section class="container-main">
+      <!-- Footer content -->
+      <div class="footer">
+        <!-- Container for social media links -->
+        <div class="container-socials">
+          <!-- LinkedIn social link -->
+          <div class="box-socials">
+            <a href="https://www.linkedin.com/" style="color:var(--main-text-color)" aria-label="linkedin-label" target="_blank">
+              <i class="fab fa-linkedin"></i> <!-- LinkedIn icon -->
+            </a>
+          </div>
+          <!-- Twitter social link -->
+          <div class="box-socials">
+            <a href="https://twitter.com/" style="color:var(--main-text-color)" aria-label="twitter-label" target="_blank">
+              <i class="fab fa-twitter"></i> <!-- Twitter icon -->
+            </a>
+          </div>
+          <!-- Instagram social link -->
+          <div class="box-socials">
+            <a href="https://www.instagram.com" style="color:var(--main-text-color)" aria-label="instagram-label" target="_blank">
+              <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+            </a>
+          </div>
+          <!-- Facebook social link -->
+          <div class="box-socials">
+            <a href="https://www.facebook.com/" style="color:var(--main-text-color)" aria-label="facebook-label" target="_blank">
+              <i class="fab fa-facebook"></i> <!-- Facebook icon -->
+            </a>
+          </div>
+          <!-- Code Institute website link -->
+          <div class="box-socials">
+            <a href="https://www.codeinstitute.net/" style="color:var(--main-text-color)" aria-label="website-label" target="_blank">
+              <i class="fas fa-globe"></i> <!-- Globe icon -->
+            </a>
+          </div>
+        </div>
+        <!-- Copyright information -->
+        <div id="end">
+            <!-- Year and name as copyright -->
+            <span class="copyright"> © </span>2023 - Filip Van Elslande
+        </div>
+      </div>
+    </section>
+  </footer>
     
     <!-- where is the javascript -->
     <script src="assets/js/script.js"></script>

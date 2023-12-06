@@ -113,6 +113,39 @@ img {
  }
 
 
+
+
+.container-socials {
+  display: flex; /* Use flexbox */
+  flex-direction: row; /* Arrange in a row */
+  flex-wrap: wrap; /* Allow wrapping */
+  height: 200px; /* Set height */
+  align-items: center; /* Align items */
+  justify-content: space-around; /* Spread items */
+}
+
+
+.box-socials {
+    display: flex; /* Use flexbox */
+    width: 80px; /* Set width */
+    height: 80px; /* Set height */
+    font-size: 3rem; /* Set font size */
+    border: solid var(--border-color); /* Set border */
+    text-align: center; /* Center align text */
+    border-radius: 15px; /* Add border radius */
+    border-style: ridge; /* Ridge border style */
+    justify-content: center; /* Center justify content */
+    align-items: center; /* Align items */
+    background: var(--main-bg-color); /* Set background color */
+    background-color: var(--main-bg-color); /* Redundant background color */
+  }
+
+
+
+
+
+
+
 #correct {
     color: green;
     font-weight: bold;
