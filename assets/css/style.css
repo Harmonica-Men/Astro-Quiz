@@ -198,50 +198,50 @@ button {
     font-size: 0rem;
 }
 
-.btn--magenta {
+.btn--A {
     border-color: magenta;
     color: violet;
     
 }
 
-.btn--magenta:active,
-.btn--magenta:hover {
+.btn--A:active,
+.btn--A:hover {
     background-color: violet;
     color: white;
 }
 
-.btn--orange {
+.btn--B {
     border-color: orange;
     color: orange;
     padding: 10px;
 }
 
-.btn--orange:active,
-.btn--orange:hover {
+.btn--B:active,
+.btn--B:hover {
     background-color: darkorange;
     color: white;
 }
 
-.btn--red {
+.btn--C {
     border-color: red;
     color: red;
     padding: 10px;
 }
 
-.btn--red:active,
-.btn--red:hover {
+.btn--C:active,
+.btn--C:hover {
     background-color: darkred;
     color: white;
 }
 
-.btn--green {
+.btn--D {
     border-color: yellowgreen;
     color: yellowgreen;
     padding: 10px;
 }
 
-.btn--green:active,
-.btn--green:hover {
+.btn--D:active,
+.btn--D:hover {
     background-color: darkgreen;
     color: white;
 }

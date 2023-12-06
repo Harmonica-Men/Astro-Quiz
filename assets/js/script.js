@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 /**
  * Main loop
  */
 function runQuiz() {
   console.log(`current question: ${currentQuestion}`);
+  
   if (currentQuestion >= quizData.length) 
             {
               alert(`Game Over`);  
@@ -104,7 +104,10 @@ function runQuiz() {
               unknownAnswers = 0;
 
             } 
-  showQuestion();
+  else {
+    showQuestion();
+  
+  }
   showScore();
 }
 
@@ -116,17 +119,19 @@ function showQuestion() {
 
   // Get the element by its ID
 let messageQuestionElement = document.getElementById('messageQuestion');
-let option0Element = document.getElementById('option0');
-let option1Element = document.getElementById('option1');
-let option2Element = document.getElementById('option2');
-let option3Element = document.getElementById('option3');
+let optionAelement = document.getElementById('optionA');
+let optionBelement = document.getElementById('optionB');
+let optionCelement = document.getElementById('optionC');
+let optionDelement = document.getElementById('optionD');
+
+
 
 if (currentQuestion < quizData.length) {
     messageQuestionElement.textContent =  quizItem.question;
-    option0Element.textContent = quizItem.choices[0];
-    option1Element.textContent = quizItem.choices[1];
-    option2Element.textContent = quizItem.choices[2];
-    option3Element.textContent = quizItem.choices[3]; 
+    optionAelement.textContent = quizItem.choices[0];
+    optionBelement.textContent = quizItem.choices[1];
+    optionCelement.textContent = quizItem.choices[2];
+    optionDelement.textContent = quizItem.choices[3]; 
   }
 }
 
@@ -158,9 +163,12 @@ function checkAnswer(userEvent) {
 
   if (userAnswer === correctAnswer) {
     correctAnswers++;
+    
   } else {
 
     alert(`Wrong Answer, the correct answer was: ${correctAnswer}`);
+
+    document.getElementById("optionA").innerText = correctAnswer;
 
     inCorrectAnswers++;
   }
