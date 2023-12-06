@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 runQuiz();
               } 
           } 
-          else 
+          else document.getElementById("next-question").innerText = 'New Game ?';
           {
             let choise = this.getAttribute("data-type");
             checkAnswer(choise);
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function runQuiz() {
   console.log(`current question: ${currentQuestion}`);
   
-  if (currentQuestion >= quizData.length) 
+  if (currentQuestion  >= quizData.length) 
             {
 
                showResults();
@@ -117,7 +117,7 @@ function showResults() {
   var msgQuestion = document.getElementById('messageQuestion');
 
   // messageQuestion
-  msgQuestion.innerHTML = 'Press Button to Continue'
+  msgQuestion.innerHTML = 'Game Over - Press Button to Continue'
 
   
   document.getElementById("next-question").innerText = 'New Game ?';
@@ -127,19 +127,6 @@ function showResults() {
   document.getElementById('optionB').style.display = 'none';
   document.getElementById('optionC').style.display = 'none';
   document.getElementById('optionD').style.display = 'none';
-  // document.getElementById('quest').style.display = 'none';
-  // document.getElementById('next-question').style.display = 'none';
-//  document.getElementById('max-question').style.display = 'none';
-
-
-  // question.innerHTML  = 'bdffgdfdfsdfsdfgs';
-  // songReveal.innerHTML = '';
-  // replaceActual();
-  //quizQuestions.innerHTML = `Well done! </br>You got ${score} out of ${askQuiz.length} questions correct!`;
-  //nextQuestion.innerHTML = 'Start again';
-  //nextQuestion.style.display = 'block';
-
-  // document.getElementById('num-of-num').style.display = 'none'; // Hide quiz counter
 }
 
 
@@ -159,6 +146,8 @@ function showQuestion() {
   document.getElementById('optionB').style.display = 'initial';
   document.getElementById('optionC').style.display = 'initial';
   document.getElementById('optionD').style.display = 'initial';
+
+  document.getElementById("next-question").innerText = 'next question';
 
   if (currentQuestion < quizData.length) {
       messageQuestionElement.textContent =  quizItem.question;
@@ -198,7 +187,7 @@ function answerCorrect(answer) {
       resultDiv.innerHTML = ''; // Clears innerHTML
       resultDiv.style.opacity = '1';
     }, 1000); // After the fade-out (1 second transition), set opacity to 1
-  }, 1000); // Fades after 5 seconds (5000 milliseconds)
+  }, 1000); // Fades after 1 seconds (1000 milliseconds)
 }
 
 
