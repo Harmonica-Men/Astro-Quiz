@@ -77,9 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
           {
             let choise = this.getAttribute("data-type");
             checkAnswer(choise);
-
-            
-
             runQuiz();
           }
       });
@@ -97,20 +94,52 @@ function runQuiz() {
   if (currentQuestion >= quizData.length) 
             {
 
-              // alert(`Game Over`);  
-                    
+               showResults();
+                   // alert('Game Over')
               currentQuestion = 0;
               correctAnswers = 0;
               inCorrectAnswers = 0;
               unknownAnswers = 0;
 
             } 
-  else {
+  else
+  {
     showQuestion();
-  
   }
+  
+  
   showScore();
   
+}
+
+// Show results of quiz 
+function showResults() {
+  var msgQuestion = document.getElementById('messageQuestion');
+
+  // messageQuestion
+  msgQuestion.innerHTML = 'Press Button to Continue'
+
+  
+  document.getElementById("next-question").innerText = 'New Game ?';
+//alert('game over')
+
+  document.getElementById('optionA').style.display = 'none';
+  document.getElementById('optionB').style.display = 'none';
+  document.getElementById('optionC').style.display = 'none';
+  document.getElementById('optionD').style.display = 'none';
+  // document.getElementById('quest').style.display = 'none';
+  // document.getElementById('next-question').style.display = 'none';
+//  document.getElementById('max-question').style.display = 'none';
+
+
+  // question.innerHTML  = 'bdffgdfdfsdfsdfgs';
+  // songReveal.innerHTML = '';
+  // replaceActual();
+  //quizQuestions.innerHTML = `Well done! </br>You got ${score} out of ${askQuiz.length} questions correct!`;
+  //nextQuestion.innerHTML = 'Start again';
+  //nextQuestion.style.display = 'block';
+
+  // document.getElementById('num-of-num').style.display = 'none'; // Hide quiz counter
 }
 
 
@@ -120,13 +149,13 @@ function showQuestion() {
 
 
   // Get the element by its ID
-let messageQuestionElement = document.getElementById('messageQuestion');
-let optionAelement = document.getElementById('optionA');
-let optionBelement = document.getElementById('optionB');
-let optionCelement = document.getElementById('optionC');
-let optionDelement = document.getElementById('optionD');
+  let messageQuestionElement = document.getElementById('messageQuestion');
+  let optionAelement = document.getElementById('optionA');
+  let optionBelement = document.getElementById('optionB');
+  let optionCelement = document.getElementById('optionC');
+  let optionDelement = document.getElementById('optionD');
 
-
+// quizQuestions.innerHTML = '';
 
 if (currentQuestion < quizData.length) {
     messageQuestionElement.textContent =  quizItem.question;
@@ -149,9 +178,6 @@ function showScore() {
 
 function answerCorrect(answer) {
   var resultDiv = document.getElementById('result');
-
-
-
   if (answer === true) {
     resultDiv.innerHTML = '👍 Correct!';
 
@@ -160,14 +186,11 @@ function answerCorrect(answer) {
   {
     resultDiv.innerHTML = '👎 Wrong answer';
   }
-   
-  
-
-  // Fades after 5 seconds for both correct and wrong answers
+     // Fades after 1 seconds for both correct and wrong answers
   setTimeout(function() {
     resultDiv.style.opacity = '0';
 
-    // After 5 seconds, clear the innerHTML and bring opacity back to normal
+    // After 1 seconds, clear the innerHTML and bring opacity back to normal
     setTimeout(function() {
       resultDiv.innerHTML = ''; // Clears innerHTML
       resultDiv.style.opacity = '1';
@@ -194,27 +217,14 @@ function checkAnswer(userEvent) {
     }
     userAnswer = userAnswer.toUpperCase();
 
-  if (userAnswer === correctAnswer) {
-
+  if (userAnswer === correctAnswer) {    
     answerCorrect(true);
     correctAnswers++;
-
-
-     
-
-  } else {
-
-//    document.getElementById("optionA").innerText = 'fsdfqsdfqds';
-    // resultDiv.innerHTML = '👎 Wrong answer. Try again!';
-
-    // alert(`Wrong Answer, the correct answer was: ${correctAnswer}`);
-
-    
+  } 
+  else 
+  {
     answerCorrect(false);
     inCorrectAnswers++;
-
-    
-
   }
 
   if (currentQuestion <  quizData.length) {

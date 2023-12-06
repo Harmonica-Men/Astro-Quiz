@@ -24,16 +24,16 @@
       <h2>How much do you know about the Universe?</h2>
     </section>
 
-    <section main> 
+    <main> 
       <div class="game-area">
         
-        <h4>Questions are more important than Answers?</h4>
+        <h4 id="quote">Questions are more important than Answers?</h4>
           
           <div class="quest">
               <p class="answer-message">A</p>
           </div>      
 
-          <p>
+          <p class="question-para">
             Question: <span id="question"></span> / <span id="maxQuestion"></span> 
           </p>
 
@@ -52,7 +52,9 @@
       
          
 
-          <button data-type="X" class="btn btn--gray">Next Question!</button>
+          <button data-type="X" class="btn btn--gray">
+            <span id="next-question">Next Question!</span>
+          </button>
 
           <div class="score-area">
             Correct Answers:<span id="correct">0</span> 
@@ -60,7 +62,7 @@
             Unknown Answers:<span id="unknown">0</span> 
           </div>
       </div>
-  </section> 
+    </main> 
 
   <footer>
     <!-- Footer section containing social links and copyright information -->
