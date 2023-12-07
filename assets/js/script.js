@@ -63,19 +63,24 @@ document.addEventListener("DOMContentLoaded", function()
   {
     button.addEventListener("click", function() 
     {
-      let skip = true;
+      // let skip = true;
       if (this.getAttribute("data-type") === "X") 
       {
-        unknownAnswers++;
+        console.log("listen",currentQuestion);
+        if (currentQuestion > -1) 
+        {
+          unknownAnswers++;
+        }
         if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
         {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-          skip = false;
+          // skip = false;
+          currentQuestion++;
         } 
         else
         {
-         /*  alert('game over');*/
-          currentQuestion = -1;
+          // alert('game over');
+          // currentQuestion = 0;
           correctAnswers = 0;
           inCorrectAnswers = 0;
           unknownAnswers = 0; 
@@ -86,14 +91,22 @@ document.addEventListener("DOMContentLoaded", function()
         let choise = this.getAttribute("data-type");
         
         
-        if (currentQuestion <= quizData.length - 1 && skip == true) 
+        if (currentQuestion <= quizData.length - 1)
+          // && skip == true) 
          {
           
           console.log("A",currentQuestion);
           // alert("stopA");
-          // if (currentQuestion > 0) 
-          checkAnswer(choise);
-            currentQuestion++;
+          if (currentQuestion < 0) 
+          {
+            currentQuestion = 0;
+          }
+          else
+          {
+            checkAnswer(choise);
+          }
+          
+          
            
          }
 
@@ -101,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function()
          else
          {
            // alert("stopB");
-             currentQuestion++;
+             // currentQuestion++;
              console.log("B",currentQuestion);
            if (currentQuestion > quizData.length -1) 
            {
@@ -242,27 +255,37 @@ function checkAnswer(userEvent) {
     }
     userAnswer = userAnswer.toUpperCase();
 
+ 
+
   if (userAnswer === correctAnswer) 
+  
   {    
+    console.log(userAnswer);
     answerCorrect(true);
     correctAnswers++;
+     currentQuestion++;  
+    
     // alert("stop here");
-    if (correctAnswers > quizData.length -1) 
+    if (correctAnswers > quizData.length -1 || currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
-            alert("stop now");
+            // alert("stop now"); 
             
             
            }
   } 
   else 
   {
+    console.log("aftrekken", currentQuestion);
     answerCorrect(false);
     inCorrectAnswers++;
-    if (inCorrectAnswers >= quizData.length -1) 
+     currentQuestion++;  
+    
+    // alert("stopB");
+    if (inCorrectAnswers > quizData.length -1 || currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
-            // alert("stopB");
+            
             // runQuiz();
            }
   } 
