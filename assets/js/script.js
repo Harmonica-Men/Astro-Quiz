@@ -31,7 +31,7 @@ const quizData = [
     choices: ["111 days", "88 days", "50 days", "25 days"],
     answer: "88 DAYS"
   },
-/*  {
+  {
     question: "5 One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
     choices: ["Callisto", "Venus", "Titan", "Mars"],
     answer: "MARS"
@@ -47,7 +47,7 @@ const quizData = [
     answer: "11 YEARS"
   },
 
-*/
+
 
   // Add more quizData here
 ];
