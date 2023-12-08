@@ -1,9 +1,11 @@
 // When the document loads a question is generated immediately
 
-var currentQuestion = 0;
-var correctAnswers = 0;
-var inCorrectAnswers = 0;
-var unknownAnswers = 0;
+let currentQuestion = 0;
+let correctAnswers = 0;
+let inCorrectAnswers = 0;
+let unknownAnswers = 0;
+
+let skip = false;
 
 const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
@@ -68,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function()
     {
       if (this.getAttribute("data-type") === "X") 
       {
-        console.log("listen",currentQuestion);
+        
         if (currentQuestion > -1) 
         {
           unknownAnswers++;
@@ -91,14 +93,8 @@ document.addEventListener("DOMContentLoaded", function()
       else document.getElementById("next-question").innerText = 'New Game ?';
       {
         let choise = this.getAttribute("data-type");
-        
-        
         if (currentQuestion <= quizData.length - 1)
-          // && skip == true) 
          {
-          
-          console.log("A",currentQuestion);
-          // alert("stopA");
           if (currentQuestion < 0) 
           {
             currentQuestion = 0;
@@ -112,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function()
        
          else
          {
-           console.log("B",currentQuestion);
+          
            if (currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
@@ -136,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function()
  */
 function runQuiz() 
 {
-  document.getElementById("maxQuestion").innerText = quizData.length;
+  // document.getElementById("maxQuestion").innerText = quizData.length;
 
   numberOfQuestions();
  
@@ -154,9 +150,8 @@ function runQuiz()
 
 function numberOfQuestions()
 {
-console.log(currentQuestion)
+  document.getElementById("maxQuestion").innerText = quizData.length;
   if (currentQuestion <= 0)
-  
   {
     document.getElementById("question").innerText = '1';
   }
@@ -164,17 +159,13 @@ console.log(currentQuestion)
   {
     document.getElementById("question").innerText = currentQuestion + 1;
   }
+
 }
 
 function showResults() {
-  var msgQuestion = document.getElementById('messageQuestion');
- 
-  quote.innerHTML = ''; 
+  let msgQuestion = document.getElementById('messageQuestion');
   msgQuestion.innerHTML = 'Game Over - Press Button to Continue';
-
-  
-  document.getElementById("next-question").innerText = 'New Game ?';
-
+  document.getElementById('question').innerText = quizData.length;
   document.getElementById('optionA').style.display = 'none';
   document.getElementById('optionB').style.display = 'none';
   document.getElementById('optionC').style.display = 'none';
@@ -263,7 +254,7 @@ function checkAnswer(userEvent) {
   if (userAnswer === correctAnswer) 
   
   {    
-    console.log(userAnswer);
+    
     answerCorrect(true);
     correctAnswers++;
      currentQuestion++;  
@@ -279,7 +270,7 @@ function checkAnswer(userEvent) {
   } 
   else 
   {
-    console.log("aftrekken", currentQuestion);
+  
     answerCorrect(false);
     inCorrectAnswers++;
     currentQuestion++;  
