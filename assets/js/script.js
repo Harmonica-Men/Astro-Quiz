@@ -5,8 +5,6 @@ let correctAnswers = 0;
 let inCorrectAnswers = 0;
 let unknownAnswers = 0;
 
-let skip = false;
-
 const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
 const scoreElement = document.getElementById('score');
@@ -64,13 +62,10 @@ document.addEventListener("DOMContentLoaded", function()
 
   for (let button of buttons) 
   {
-    
     button.addEventListener("click", function() 
-
     {
       if (this.getAttribute("data-type") === "X") 
       {
-        
         if (currentQuestion > -1) 
         {
           unknownAnswers++;
@@ -78,13 +73,10 @@ document.addEventListener("DOMContentLoaded", function()
         if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
         {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-         
           currentQuestion++;
         } 
         else
         {
-          // alert('game over');
-          // currentQuestion = 0;
           correctAnswers = 0;
           inCorrectAnswers = 0;
           unknownAnswers = 0; 
@@ -104,25 +96,17 @@ document.addEventListener("DOMContentLoaded", function()
             checkAnswer(choise);
           }
          }
-
-       
          else
          {
-          
            if (currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
              }
-           
          }
-
-         
-
-        runQuiz();
+         runQuiz();
       }
     });
   }
-  
   runQuiz();
 });
 
@@ -131,11 +115,8 @@ document.addEventListener("DOMContentLoaded", function()
  * Main loop
  */
 function runQuiz() 
-{
-  // document.getElementById("maxQuestion").innerText = quizData.length;
-
+{  
   numberOfQuestions();
- 
   if (currentQuestion <= quizData.length && currentQuestion > -1)
   {
     showQuestion();
@@ -145,7 +126,6 @@ function runQuiz()
     showResults();
   } 
   showScore(); 
-  
 }
 
 function numberOfQuestions()
@@ -159,7 +139,6 @@ function numberOfQuestions()
   {
     document.getElementById("question").innerText = currentQuestion + 1;
   }
-
 }
 
 function showResults() {
@@ -202,8 +181,6 @@ function showScore() {
   document.getElementById("correct").innerText = correctAnswers;
   document.getElementById("incorrect").innerText = inCorrectAnswers;
   document.getElementById("unknown").innerText = unknownAnswers;
-  
-  
 }
 
 
@@ -211,7 +188,6 @@ function answerCorrect(answer) {
   var resultDiv = document.getElementById('result');
   if (answer === true) {
     resultDiv.innerHTML = '👍 Correct!';
-
   }
   else
   {
@@ -220,7 +196,6 @@ function answerCorrect(answer) {
      // Fades after 1 seconds for both correct and wrong answers
   setTimeout(function() {
     resultDiv.style.opacity = '0';
-
     // After 1 seconds, clear the innerHTML and bring opacity back to normal
     setTimeout(function() {
       resultDiv.innerHTML = ''; // Clears innerHTML
@@ -248,29 +223,18 @@ function checkAnswer(userEvent) {
       userAnswer = quizData[currentQuestion].choices[3];
     }
     userAnswer = userAnswer.toUpperCase();
-
- 
-
   if (userAnswer === correctAnswer) 
-  
   {    
-    
     answerCorrect(true);
     correctAnswers++;
-     currentQuestion++;  
-    
-    // alert("stop here");
+    currentQuestion++;  
     if (correctAnswers > quizData.length -1 || currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
-            // alert("stop now"); 
-            
-            
            }
   } 
   else 
   {
-  
     answerCorrect(false);
     inCorrectAnswers++;
     currentQuestion++;  
