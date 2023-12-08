@@ -57,13 +57,15 @@ const quizData = [
 
 document.addEventListener("DOMContentLoaded", function() 
 {
+  
   let buttons = document.getElementsByTagName("button");
 
   for (let button of buttons) 
   {
+    
     button.addEventListener("click", function() 
+
     {
-      // let skip = true;
       if (this.getAttribute("data-type") === "X") 
       {
         console.log("listen",currentQuestion);
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function()
         if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
         {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-          // skip = false;
+         
           currentQuestion++;
         } 
         else
@@ -105,25 +107,17 @@ document.addEventListener("DOMContentLoaded", function()
           {
             checkAnswer(choise);
           }
-          
-          
-           
          }
 
        
          else
          {
-           // alert("stopB");
-             // currentQuestion++;
-             console.log("B",currentQuestion);
+           console.log("B",currentQuestion);
            if (currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
-            // alert("stopB");
-           }
-           //checkAnswer(choise);
-           // showScore(); 
-            // currentQuestion = -1; 
+             }
+           
          }
 
          
@@ -132,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function()
       }
     });
   }
+  
   runQuiz();
 });
 
@@ -141,7 +136,10 @@ document.addEventListener("DOMContentLoaded", function()
  */
 function runQuiz() 
 {
-  
+  document.getElementById("maxQuestion").innerText = quizData.length;
+
+  numberOfQuestions();
+ 
   if (currentQuestion <= quizData.length && currentQuestion > -1)
   {
     showQuestion();
@@ -150,23 +148,32 @@ function runQuiz()
   {
     showResults();
   } 
-  showScore();  
+  showScore(); 
   
 }
 
-// Show results of quiz 
+function numberOfQuestions()
+{
+console.log(currentQuestion)
+  if (currentQuestion <= 0)
+  
+  {
+    document.getElementById("question").innerText = '1';
+  }
+  else
+  {
+    document.getElementById("question").innerText = currentQuestion + 1;
+  }
+}
+
 function showResults() {
   var msgQuestion = document.getElementById('messageQuestion');
-  // var msgQuestionNumber = document.getElementById('question-para');
-
-   // msgQuestionNumber.innerHTML = 'bla';
-
+ 
   quote.innerHTML = ''; 
   msgQuestion.innerHTML = 'Game Over - Press Button to Continue';
 
   
   document.getElementById("next-question").innerText = 'New Game ?';
-//alert('game over')
 
   document.getElementById('optionA').style.display = 'none';
   document.getElementById('optionB').style.display = 'none';
@@ -177,10 +184,7 @@ function showResults() {
 
 function showQuestion() {
   const quizItem = quizData[currentQuestion];
-  // questionElement.textContent = quizItem.question; 
 
-
-  // Get the element by its ID
   let messageQuestionElement = document.getElementById('messageQuestion');
   let optionAelement = document.getElementById('optionA');
   let optionBelement = document.getElementById('optionB');
@@ -207,8 +211,7 @@ function showScore() {
   document.getElementById("correct").innerText = correctAnswers;
   document.getElementById("incorrect").innerText = inCorrectAnswers;
   document.getElementById("unknown").innerText = unknownAnswers;
-  //document.getElementById("maxQuestion").innerText = quizData.length;
-  //document.getElementById("question").innerText = currentQuestion + 1;
+  
   
 }
 
@@ -279,21 +282,12 @@ function checkAnswer(userEvent) {
     console.log("aftrekken", currentQuestion);
     answerCorrect(false);
     inCorrectAnswers++;
-     currentQuestion++;  
-    
-    // alert("stopB");
+    currentQuestion++;  
     if (inCorrectAnswers > quizData.length -1 || currentQuestion > quizData.length -1) 
            {
             currentQuestion = -1; 
-            
-            // runQuiz();
            }
   } 
   }
-  
-  
-    
-   
-  
 }
 

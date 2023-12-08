@@ -29,11 +29,11 @@ h2 {
 h4 {
     font-size: 1.25rem;
 }
-
+/*
 p {
     font-size: 1rem;
 }
-
+*/
 img {
     width: 100%;
     max-width: 400px;
@@ -292,9 +292,7 @@ button {
        padding: 10px;
          border-radius: 10px;
          flex-wrap: nowrap;
-    }
-
-        
+   }
 
 }
 
