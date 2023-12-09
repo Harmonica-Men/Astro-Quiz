@@ -1,12 +1,12 @@
 # Astro-Quiz
 How much do you know about the Universe?
 This little quiz is designed to give you the answer to that be multiple choise. The main goal is to test your knownlegde about astromical subjects.
-For demostation peropose this quiz is limeted to seven question. 
-Regardeless of the difficult level of the questions the audiences of different ages can be targeted. 
+For demonstration propose this quiz is limited to seven question. 
+Regardless of the difficult level of the questions, the audiences of different ages can be targeted. 
 
 ## Intro
 
-![Alt text](assets/images/wireframes/Responsive.png)
+![resp](assets/images/wireframes/Responsive.png)
 
 
 project desscription
