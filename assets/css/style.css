@@ -1,14 +1,18 @@
+/* Root variables for color palette */
 :root {
-    --main-bg-color:  #0C134F80;
-    --sec-bg-color: #1D267D80; 
-    --sec-text-color: #5C469C; 
-    --main-text-color: #D4ADFC;   
-         
-    --border-color: #99999c; 
+    --main-bg-color: #0C134F80;
+    /* Main background color */
+    --sec-bg-color: #1D267D80;
+    /* Secondary background color */
+    --sec-text-color: #5C469C;
+    /* Secondary text color */
+    --main-text-color: #D4ADFC;
+    /* Main text color */
+    --border-color: #99999c;
+    /* Border color */
 }
-
 /* --------- Global style */
-
+/* Styling for the body */
 body {
     background-color: var(--main-bg-color);
     font-family: "Raleway", sans-serif;
@@ -22,6 +26,7 @@ body {
   
 }
 
+/* Heading styles */
 h2 {
     font-size: 1.5rem;
 }
@@ -40,22 +45,14 @@ img {
     height: auto;
   }
   
-/* --------- Heading */
 
+/* Heading and banner styles */
 .heading {
     text-align: center;
     font-size: 2.5rem;
 }
 
-/* .banner {
-    height: 250px;
-    padding: 25px;
-
-    /* padding-right: 5px; 
-}
-*/
-/* --------- Game layout */
-
+/* Game layout styles */
 .game-area 
 {
     margin-left: 125px;
@@ -285,11 +282,12 @@ button {
     font-size: 2.25rem;
   }
 
+/* Media queries for responsiveness */
+/* Adjust styles for different screen sizes */
 @media (max-width: 800px) {
+    /* Styles for smaller screens */
     .score-area {
         font-size: 1rem;
-        /* width: 250px; */
-       /* height: 90px;*/
        padding: 10px;
          border-radius: 10px;
          flex-wrap: nowrap;
