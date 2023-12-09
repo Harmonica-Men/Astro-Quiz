@@ -1,23 +1,14 @@
 # Astro-Quiz
 How much do you know about the Universe?
+
 This little quiz is designed to give you the answer to that be multiple choise. The main goal is to test your knownlegde about astromical subjects.
 For demonstration propose this quiz is limited to seven question. 
 Regardless of the difficult level of the questions, the audiences of different ages can be targeted. 
 
 ## Intro
 
-![resp](assets/images/wireframes/Responsive.png)
+![responiveness](assets/images/wireframes/Responsive.png)
 
-
-project desscription
-purpose motivation
-user demographic
-
-What, why & who 
-
-right expectations
-project purpose
-target audience
 
 ## UX
 Because this a multiple question method. 
@@ -63,11 +54,13 @@ Timer, to level up the User Experience and higher cognitive thinking is required
   * Styling.
 * JS
   * Javascript / gameplay
- Google Fonts
-* Font Styles.
-* Fontawesome
-* Github
 
+### Tools
+* Google Fonts
+  * Is this project the font  *Roboto*  was choosen in [GoogleFonts](https://fonts.google.com/specimen/Roboto)
+* Favicon
+  * In Flaticon the Saturn favicon was used [favicon](https://www.flaticon.com/free-icon/saturn_5005667?related_id=5005667)
+* Github
 
 ### Other Tools
 * Wireframe where used be [Balsamiq](https://balsamiq.com/wireframes/)
@@ -86,6 +79,15 @@ Creating color pallettes.
 ### Manual Testing
 Methods
 Validation
+
+Validator Testing
+HTML
+No errors were returned when passing through the official W3C validator
+CSS
+No errors were found when passing through the official (Jigsaw) validator
+
+
+
 HTML has been validated with W3C HTML5 Validator.
 
 
