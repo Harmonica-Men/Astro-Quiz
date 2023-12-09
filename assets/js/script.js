@@ -1,16 +1,19 @@
-// When the document loads a question is generated immediately
-
+// Variables to keep track of quiz progress and scores
 let currentQuestion = 0;
 let correctAnswers = 0;
 let inCorrectAnswers = 0;
 let unknownAnswers = 0;
 
+
+// DOM element references
 const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
 const scoreElement = document.getElementById('score');
 const answerElement = document.getElementById('answer');
 
+// Array containing quiz data (questions, choices, and answers)
 const quizData = [
+   // Questions and answers data here
   {
     question: "1 The largest circular storm in our solar system is on the surface of which of the following planets?",
     choices: ["Jupiter", "Venus", "Uranus", "Earth"],
@@ -54,15 +57,16 @@ const quizData = [
 
 // booting up the DOM then run the Quiz
 // button elements A,B,C,D for event handelers to listen
-
+// Function to initialize and start the quiz on DOM content load
 document.addEventListener("DOMContentLoaded", function() 
 {
-  
+  // Event listeners for quiz buttons
   let buttons = document.getElementsByTagName("button");
 
   for (let button of buttons) 
   {
     button.addEventListener("click", function() 
+     // Logic for handling user interactions and quiz progress
     {
       if (this.getAttribute("data-type") === "X") 
       {
@@ -103,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function()
             currentQuestion = -1; 
              }
          }
+         // Initialize the quiz
          runQuiz();
       }
     });
@@ -112,10 +117,11 @@ document.addEventListener("DOMContentLoaded", function()
 
 
 /**
- * Main loop
+ * Main loop controlling the quiz flow
  */
 function runQuiz() 
 {  
+  // Functions to display questions, results, and scores
   numberOfQuestions();
   if (currentQuestion <= quizData.length && currentQuestion > -1)
   {
@@ -128,7 +134,9 @@ function runQuiz()
   showScore(); 
 }
 
+// Function to display the number of questions
 function numberOfQuestions()
+// Function to display the number of questions
 {
   document.getElementById("maxQuestion").innerText = quizData.length;
   if (currentQuestion <= 0)
@@ -141,6 +149,7 @@ function numberOfQuestions()
   }
 }
 
+// Function to display results when the quiz ends
 function showResults() {
   let msgQuestion = document.getElementById('messageQuestion');
   msgQuestion.innerHTML = 'Game Over - Press Button to Continue';
@@ -151,7 +160,7 @@ function showResults() {
   document.getElementById('optionD').style.display = 'none';
 }
 
-
+// Function to display a single question
 function showQuestion() {
   const quizItem = quizData[currentQuestion];
 
@@ -177,14 +186,16 @@ function showQuestion() {
     }
   }
 
+// Function to display the score
 function showScore() {
   document.getElementById("correct").innerText = correctAnswers;
   document.getElementById("incorrect").innerText = inCorrectAnswers;
   document.getElementById("unknown").innerText = unknownAnswers;
 }
 
-
+// Functions related to handling user answers and providing feedback
 function answerCorrect(answer) {
+   // Function to display feedback for correct and incorrect answers
   var resultDiv = document.getElementById('result');
   if (answer === true) {
     resultDiv.innerHTML = '👍 Correct!';
@@ -204,7 +215,7 @@ function answerCorrect(answer) {
   }, 1000); // Fades after 1 seconds (1000 milliseconds)
 }
 
-
+// Function to compare user's answer with the correct answer
 function checkAnswer(userEvent) {
   let userAnswer = "";
   if (currentQuestion >= 0) {
