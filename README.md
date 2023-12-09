@@ -28,10 +28,10 @@ When answers are not given there are points to be gain.
 ## Features/Heading
 The answer are embbeded into multple-choise buttons to give a more smooth user experience
 
-As extra feature socails are build in to external links and media platforms.
+As extra feature socails are build in to external links and others media platforms.
 
-## Responsiveness 
-The responsiveness is tested for different media device
+## wireframe 
+The design is made different media device
 * smartphone
 ![smartphone](assets/images/wireframes/PP2-Smartphone1.png)
 
@@ -53,14 +53,18 @@ Timer, to level up the User Experience and higher cognitive thinking is required
 * CSS
   * Styling.
 * JS
-  * Javascript / gameplay
+  * Javascript code for gameplay
 
 ### Tools
 * Google Fonts
   * Is this project the font  *Roboto*  was choosen in [GoogleFonts](https://fonts.google.com/specimen/Roboto)
 * Favicon
+  
   * In Flaticon the Saturn favicon was used [favicon](https://www.flaticon.com/free-icon/saturn_5005667?related_id=5005667)
-* Github
+  ![Fav Saturn](assets/images/wireframes/favicon-128x128.png)
+* Colors
+   * The Color scheme comes from [colorhunt](https://colorhunt.co/)
+   ![Alt text](assets/images/wireframes/colors-schema.png)
 
 ### Other Tools
 * Wireframe where used be [Balsamiq](https://balsamiq.com/wireframes/)
@@ -68,15 +72,9 @@ Timer, to level up the User Experience and higher cognitive thinking is required
 
 This site was built using [GitHub Pages](https://pages.github.com/)
 
-
-Mockup Generator
-For device mockup images.
-Coolors
-Creating color pallettes.
-
-
-
 ### Manual Testing
+The overall 
+
 Methods
 Validation
 
