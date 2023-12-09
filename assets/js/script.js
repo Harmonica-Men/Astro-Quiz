@@ -18,7 +18,7 @@ const quizData = [
   },
   {
     question: "2 The rapidly moving stream of charged particles that is being driven away from the sun is known as what?",
-    choices: ["Star Dust", "Chared Particles", "Solar Wind", "Cosmic Rays"],
+    choices: ["Star Dust", "Charged Particles", "Solar Wind", "Cosmic Rays"],
     answer: "SOLAR WIND"
   },
   {
