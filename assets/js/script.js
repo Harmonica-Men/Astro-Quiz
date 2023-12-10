@@ -202,7 +202,7 @@ function answerCorrect(answer) {
   }
   else
   {
-    resultDiv.innerHTML = '👎 Wrong answer';
+     alert(` 👎 Wrong answer!\nThe correct answer was: ${quizData[currentQuestion].answer}`);
   }
      // Fades after 1 seconds for both correct and wrong answers
   setTimeout(function() {
@@ -253,7 +253,7 @@ function checkAnswer(userEvent) {
            {
             currentQuestion = -1; 
            }
-  } 
+   } 
   }
 }
 

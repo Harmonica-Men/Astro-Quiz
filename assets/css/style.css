@@ -64,7 +64,9 @@ img {
 }
 
 
-
+#displayCorrectAnswer {
+    font-size: 2rem;
+}
 
 
 
@@ -119,9 +121,6 @@ img {
   font-size: 3rem;
   
 }
-
-
-
 
 #correct {
     color: green;
