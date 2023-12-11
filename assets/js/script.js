@@ -69,23 +69,17 @@ document.addEventListener("DOMContentLoaded", function()
     {
       if (this.getAttribute("data-type") === "X") 
       {
-        if (currentQuestion > -1) 
-        {
+        if (currentQuestion > -1) {
           unknownAnswers++;
         }
-        if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
-        {
+        if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-        } 
-        else
-        {
+        } else {
           correctAnswers = 0;
           inCorrectAnswers = 0;
           unknownAnswers = 0; 
         }
-      } 
-      else document.getElementById("next-question").innerText = 'New Game ?';
-      {
+      } else document.getElementById("next-question").innerText = 'New Game ?'; {
         let choise = this.getAttribute("data-type");
         
         if (currentQuestion <= quizData.length - 1) {
@@ -98,14 +92,14 @@ document.addEventListener("DOMContentLoaded", function()
                 currentQuestion = -1;
               } else currentQuestion++;
             } else checkAnswer(choise);
+           }
+          } else {
+          if (currentQuestion > quizData.length -1) {
+            currentQuestion = -1; 
+           }
           }
-        } else {
-        if (currentQuestion > quizData.length -1) {
-          currentQuestion = -1; 
-         }
+        runQuiz();
         }
-       runQuiz();
-      }
     });
   }
   runQuiz();
