@@ -88,39 +88,28 @@ document.addEventListener("DOMContentLoaded", function()
       {
         let choise = this.getAttribute("data-type");
         
-        if (currentQuestion <= quizData.length - 1)
-         {
-          if (currentQuestion < 0) 
-          {
+        if (currentQuestion <= quizData.length - 1) {
+          if (currentQuestion < 0) {
             currentQuestion = 0;
-          }
-          else
-          {
-            if (choise === 'X')            
-            {
-              console.log(currentQuestion);
+          } else {
+            if (choise === 'X') {
               if (currentQuestion >= quizData.length - 1) {
                 document.getElementById("incorrect").innerText = currentQuestion + 1;
                 currentQuestion = -1;
               } else currentQuestion++;
-            }
-            else checkAnswer(choise);
+            } else checkAnswer(choise);
           }
+        } else {
+        if (currentQuestion > quizData.length -1) {
+          currentQuestion = -1; 
          }
-         else
-         {
-           if (currentQuestion > quizData.length -1) 
-           {
-            currentQuestion = -1; 
-             }
-         }
-         runQuiz();
+        }
+       runQuiz();
       }
     });
   }
   runQuiz();
 });
-
 
 /**
  * Main loop controlling the quiz flow
@@ -220,10 +209,9 @@ const correctAnswer = quizData[currentQuestion].answer;
 
 function compareAnswerCounter(counter) {
   if (counter > quizData.length -1 || currentQuestion > quizData.length -1) 
-           {
-            currentQuestion = -1; 
-           }
-
+    {
+    currentQuestion = -1; 
+    }
 }
 
 if (currentQuestion >= 0) {
@@ -250,9 +238,7 @@ if (currentQuestion >= 0) {
     correctAnswers++;
     currentQuestion++;  
     compareAnswerCounter(correctAnswers);
-  } 
-  else 
-  {
+  } else {
     answerCorrect(false);
     inCorrectAnswers++;
     currentQuestion++;  
