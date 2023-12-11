@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function()
             if (choise === 'X')
             {
               if (currentQuestion > quizData.length) {
-                currentQuestion = 0;
+                currentQuestion = -1;
 
               } else currentQuestion++;
               // alert("stop");
@@ -169,15 +169,24 @@ function numberOfQuestions()
   }
 }
 
+
+function loopElements(displayVar) {
+  
+let elements = [optionAelement, optionBelement, optionCelement, optionDelement];
+
+for (let i = 0; i < elements.length; i++) {
+  elements[i].style.display = displayVar;
+}
+
+}
+
 // Function to display results when the quiz ends
 function showResults() {
   let msgQuestion = document.getElementById('messageQuestion');
+
   msgQuestion.innerHTML = 'Game Over - Press Button to Continue';
   document.getElementById('question').innerText = quizData.length;
-  optionAelement.style.display = 'none';
-  optionBelement.style.display = 'none';
-  optionCelement.style.display = 'none';
-  optionDelement.style.display = 'none';
+  loopElements('none');
 }
 
 // Function to display a single question
@@ -186,10 +195,11 @@ function showQuestion() {
 /* block */
   let messageQuestionElement = document.getElementById('messageQuestion');
   
-  optionAelement.style.display = 'initial';
+  loopElements('initial');
+  /*optionAelement.style.display = 'initial';
   optionBelement.style.display = 'initial';
   optionCelement.style.display = 'initial';
-  optionDelement.style.display = 'initial';
+  optionDelement.style.display = 'initial';*/
   
   document.getElementById("next-question").innerText = 'next question';
 
