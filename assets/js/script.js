@@ -103,11 +103,15 @@ document.addEventListener("DOMContentLoaded", function()
           }
           else
           {
-            console.log(choise);
-            if (choise === 'X')
+            // console.log(choise);
+            if (choise === 'X')            
             {
-              if (currentQuestion > quizData.length) {
+              console.log(currentQuestion);
+              if (currentQuestion >= quizData.length - 1) {
+                //currentQuestion = quizData.length;
+                document.getElementById("incorrect").innerText = currentQuestion + 1;
                 currentQuestion = -1;
+
 
               } else currentQuestion++;
               // alert("stop");
@@ -192,23 +196,23 @@ function showResults() {
 // Function to display a single question
 function showQuestion() {
   const quizItem = quizData[currentQuestion];
-/* block */
   let messageQuestionElement = document.getElementById('messageQuestion');
+  let quizChoices = quizItem.choices; //  quizItem choices contains the choices
+  let elements = [optionAelement, optionBelement, optionCelement, optionDelement];
+
+  // Loop through the elements array and set textContent from quizChoices
   
   loopElements('initial');
-  /*optionAelement.style.display = 'initial';
-  optionBelement.style.display = 'initial';
-  optionCelement.style.display = 'initial';
-  optionDelement.style.display = 'initial';*/
-  
   document.getElementById("next-question").innerText = 'next question';
 
   if (currentQuestion < quizData.length && currentQuestion > -1) {
       messageQuestionElement.textContent =  quizItem.question;
-      optionAelement.textContent = quizItem.choices[0];
-      optionBelement.textContent = quizItem.choices[1];
-      optionCelement.textContent = quizItem.choices[2];
-      optionDelement.textContent = quizItem.choices[3]; 
+
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].textContent = quizChoices[i];
+      }
+
+
     }
   }
 
