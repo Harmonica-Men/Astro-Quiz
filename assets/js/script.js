@@ -4,7 +4,6 @@ let correctAnswers = 0;
 let inCorrectAnswers = 0;
 let unknownAnswers = 0;
 
-
 // DOM element references
 const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
@@ -14,7 +13,6 @@ const optionAelement = document.getElementById('optionA');
 const optionBelement = document.getElementById('optionB');
 const optionCelement = document.getElementById('optionC');
 const optionDelement = document.getElementById('optionD'); 
-
 
 // Array containing quiz data (questions, choices, and answers)
 const quizData = [
@@ -54,10 +52,6 @@ const quizData = [
     choices: ["3 years", "11 years", "26 years", "49 years"],
     answer: "11 YEARS"
   },
-
-
-
-  // Add more quizData here
 ];
 
 // booting up the DOM then run the Quiz
@@ -67,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function()
 {
   // Event listeners for quiz buttons
   let buttons = document.getElementsByTagName("button");
-
+  // button into the array
   for (let button of buttons) 
   {
     button.addEventListener("click", function() 
@@ -82,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function()
         if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
         {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-          // currentQuestion++;
         } 
         else
         {
@@ -103,25 +96,15 @@ document.addEventListener("DOMContentLoaded", function()
           }
           else
           {
-            // console.log(choise);
             if (choise === 'X')            
             {
               console.log(currentQuestion);
               if (currentQuestion >= quizData.length - 1) {
-                //currentQuestion = quizData.length;
                 document.getElementById("incorrect").innerText = currentQuestion + 1;
                 currentQuestion = -1;
-
-
               } else currentQuestion++;
-              // alert("stop");
             }
-            else
-            {  
-              // alert(choise);
-              //currentQuestion++;
-              checkAnswer(choise);
-            } 
+            else checkAnswer(choise);
           }
          }
          else
@@ -131,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function()
             currentQuestion = -1; 
              }
          }
-         // Initialize the quiz
          runQuiz();
       }
     });
@@ -147,12 +129,9 @@ function runQuiz()
 {  
   // Functions to display questions, results, and scores
   numberOfQuestions();
-  if (currentQuestion <= quizData.length && currentQuestion > -1)
-  {
+  if (currentQuestion <= quizData.length && currentQuestion > -1) {
     showQuestion();
-  } 
-  else
-  {
+  } else {
     showResults();
   } 
   showScore(); 
@@ -163,25 +142,19 @@ function numberOfQuestions()
 // Function to display the number of questions
 {
   document.getElementById("maxQuestion").innerText = quizData.length;
-  if (currentQuestion <= 0)
-  {
+  if (currentQuestion <= 0) {
     document.getElementById("question").innerText = '1';
-  }
-  else
-  {
+  } else {
     document.getElementById("question").innerText = currentQuestion + 1;
   }
 }
 
-
+// Loop Element function to simplify repative code
 function loopElements(displayVar) {
-  
-let elements = [optionAelement, optionBelement, optionCelement, optionDelement];
-
-for (let i = 0; i < elements.length; i++) {
-  elements[i].style.display = displayVar;
-}
-
+  let elements = [optionAelement, optionBelement, optionCelement, optionDelement];
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.display = displayVar;
+  }
 }
 
 // Function to display results when the quiz ends
@@ -201,18 +174,14 @@ function showQuestion() {
   let elements = [optionAelement, optionBelement, optionCelement, optionDelement];
 
   // Loop through the elements array and set textContent from quizChoices
-  
   loopElements('initial');
   document.getElementById("next-question").innerText = 'next question';
 
   if (currentQuestion < quizData.length && currentQuestion > -1) {
       messageQuestionElement.textContent =  quizItem.question;
-
       for (let i = 0; i < elements.length; i++) {
         elements[i].textContent = quizChoices[i];
       }
-
-
     }
   }
 
@@ -229,9 +198,7 @@ function answerCorrect(answer) {
   var resultDiv = document.getElementById('result');
   if (answer === true) {
     resultDiv.innerHTML = '👍 Correct!';
-  }
-  else
-  {
+  } else {
     // console.log(currentQuestion);
      alert(` 👎 Wrong answer!\nThe correct answer was: ${quizData[currentQuestion].answer}`);
   }
@@ -276,8 +243,6 @@ if (currentQuestion >= 0) {
     }
 
   userAnswer = userAnswer.toUpperCase();
-
-  console.log(userAnswer,' ',correctAnswer);
 
   if (userAnswer === correctAnswer) 
   {    
