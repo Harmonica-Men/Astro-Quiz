@@ -10,6 +10,11 @@ const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
 const scoreElement = document.getElementById('score');
 const answerElement = document.getElementById('answer');
+const optionAelement = document.getElementById('optionA');
+  const optionBelement = document.getElementById('optionB');
+  const optionCelement = document.getElementById('optionC');
+  const optionDelement = document.getElementById('optionD'); 
+
 
 // Array containing quiz data (questions, choices, and answers)
 const quizData = [
@@ -154,10 +159,10 @@ function showResults() {
   let msgQuestion = document.getElementById('messageQuestion');
   msgQuestion.innerHTML = 'Game Over - Press Button to Continue';
   document.getElementById('question').innerText = quizData.length;
-  document.getElementById('optionA').style.display = 'none';
-  document.getElementById('optionB').style.display = 'none';
-  document.getElementById('optionC').style.display = 'none';
-  document.getElementById('optionD').style.display = 'none';
+  optionAelement.style.display = 'none';
+  optionBelement.style.display = 'none';
+  optionCelement.style.display = 'none';
+  optionDelement.style.display = 'none';
 }
 
 // Function to display a single question
@@ -165,11 +170,7 @@ function showQuestion() {
   const quizItem = quizData[currentQuestion];
 /* block */
   let messageQuestionElement = document.getElementById('messageQuestion');
-  let optionAelement = document.getElementById('optionA');
-  let optionBelement = document.getElementById('optionB');
-  let optionCelement = document.getElementById('optionC');
-  let optionDelement = document.getElementById('optionD'); 
-
+  
   optionAelement.style.display = 'initial';
   optionBelement.style.display = 'initial';
   optionCelement.style.display = 'initial';
