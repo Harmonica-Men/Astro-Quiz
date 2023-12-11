@@ -8,7 +8,7 @@ Regardless of the difficulty level of the questions, the audiences of different 
 
 ## Intro
 
-![responiveness](assets/images/wireframes/Responsive.png)
+![responiveness](assets/images/wireframes/responsive.png)
 
 ## UX
 Because this is a multiple-choice question method.
@@ -32,13 +32,13 @@ As an extra feature, social media links are built into external links and other 
 The design is made different media device
 
 - smartphone
-  ![smartphone](assets/images/wireframes/PP2-Smartphone1.png)
+  ![smartphone](assets/images/wireframes/pp2-smartphone1.png)
 
 - tablet
-  ![tablet](assets/images/wireframes/PP2-Wireframe-tablet-1.png)
+  ![tablet](assets/images/wireframes/pp2-wireframe-tablet-1.png)
 
 - desktop
-  ![desktop](assets/images/wireframes/PP2-wireframe-desktop.png)
+  ![desktop](assets/images/wireframes/pp2-wireframe-desktop.png)
 
 ## Features to be implemented?
 If a JSON build input is implemented, it can potentially be added to provide more questions.
@@ -83,7 +83,7 @@ The overall performence test on Lighthouse (dev-tools) has a 97% score
 Validator Testing
 HTML
 No errors were returned when passing through the official W3C validator
-![HTML Validation](assets/images/wireframes/Html-validator-test.png)
+![HTML Validation](assets/images/wireframes/html-validator-test.png)
 CSS
 No errors were found when passing through the official (Jigsaw) validator
 ![CSS Validation](assets/images/wireframes/CSS-validator-test.png)
