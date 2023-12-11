@@ -11,7 +11,6 @@ Regardless of the difficulty level of the questions, the audiences of different 
 ![responiveness](assets/images/wireframes/Responsive.png)
 
 ## UX
-
 Because this is a multiple-choice question method.
 (A multiple-choice item consists of a problem, known as the stem, and a list of suggested solutions, known as alternatives.)
 
@@ -20,18 +19,16 @@ Even with deductive reasoning, the answers can be guessed because there is only 
 
 There are actual counters built in to keep track of the correct and incorrect answers, and the questions that are unanswered are counted.
 
-## user story
+## User Story
 In classical multiple-choice game play, points are granted for correct answers, and if answers are wrong, points can be penalized.
 When answers are not given, there are points to be gained.
 
 ## Features/Heading
-
 The answers are embedded into multiple-choice buttons to give a more smooth user experience
 
 As an extra feature, social media links are built into external links and other media platforms.
 
-## wireframe
-
+## Wireframe
 The design is made different media device
 
 - smartphone
@@ -44,10 +41,10 @@ The design is made different media device
   ![desktop](assets/images/wireframes/PP2-wireframe-desktop.png)
 
 ## Features to be implemented?
-
 If a JSON build input is implemented, it can potentially be added to provide more questions.
 
 Timer is required to level up the User Experience and higher cognitive thinking is required.
+
 ## Technologies Used
 
 ### Languages
@@ -60,11 +57,9 @@ Timer is required to level up the User Experience and higher cognitive thinking 
   - Javascript code for gameplay
 
 ### Tools
-
 - Google Fonts
   - Is this project the font _Roboto_ was choosen in [GoogleFonts](https://fonts.google.com/specimen/Roboto)
 - Favicon
-
   - In Flaticon the Saturn favicon was used [favicon](https://www.flaticon.com/free-icon/saturn_5005667?related_id=5005667)
     
     ![Fav Saturn](assets/images/wireframes/favicon-128x128.png)
@@ -107,12 +102,11 @@ Each JavaScript file was tested on the site for errors and functionality using t
 Local Preparation
 
 Requirements:
-
 - Any modern IDE of would work, but in this example I use the most popular today: Visual Studio Code
 - Git is standard on the latest linux distribution in case your using Windows you need to download the Git Repo.
 
 ### Local Instructions
-
+On 
 Download a copy of the project repository here and extract the zip file to your base folder. Or you can clone the repository with:
 git clone https://github.com/Ri-Dearg/neverlost-thrift
 

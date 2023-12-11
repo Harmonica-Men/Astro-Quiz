@@ -163,18 +163,18 @@ function showResults() {
 // Function to display a single question
 function showQuestion() {
   const quizItem = quizData[currentQuestion];
-
+/* block */
   let messageQuestionElement = document.getElementById('messageQuestion');
   let optionAelement = document.getElementById('optionA');
   let optionBelement = document.getElementById('optionB');
   let optionCelement = document.getElementById('optionC');
-  let optionDelement = document.getElementById('optionD');
+  let optionDelement = document.getElementById('optionD'); 
 
-  document.getElementById('optionA').style.display = 'initial';
-  document.getElementById('optionB').style.display = 'initial';
-  document.getElementById('optionC').style.display = 'initial';
-  document.getElementById('optionD').style.display = 'initial';
-
+  optionAelement.style.display = 'initial';
+  optionBelement.style.display = 'initial';
+  optionCelement.style.display = 'initial';
+  optionDelement.style.display = 'initial';
+  
   document.getElementById("next-question").innerText = 'next question';
 
   if (currentQuestion < quizData.length && currentQuestion > -1) {
