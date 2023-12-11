@@ -11,9 +11,9 @@ const choicesElement = document.getElementById('choices');
 const scoreElement = document.getElementById('score');
 const answerElement = document.getElementById('answer');
 const optionAelement = document.getElementById('optionA');
-  const optionBelement = document.getElementById('optionB');
-  const optionCelement = document.getElementById('optionC');
-  const optionDelement = document.getElementById('optionD'); 
+const optionBelement = document.getElementById('optionB');
+const optionCelement = document.getElementById('optionC');
+const optionDelement = document.getElementById('optionD'); 
 
 
 // Array containing quiz data (questions, choices, and answers)
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function()
         if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) 
         {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-          currentQuestion++;
+          // currentQuestion++;
         } 
         else
         {
@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function()
       else document.getElementById("next-question").innerText = 'New Game ?';
       {
         let choise = this.getAttribute("data-type");
+        
         if (currentQuestion <= quizData.length - 1)
          {
           if (currentQuestion < 0) 
@@ -102,7 +103,21 @@ document.addEventListener("DOMContentLoaded", function()
           }
           else
           {
-            checkAnswer(choise);
+            console.log(choise);
+            if (choise === 'X')
+            {
+              if (currentQuestion > quizData.length) {
+                currentQuestion = 0;
+
+              } else currentQuestion++;
+              // alert("stop");
+            }
+            else
+            {  
+              // alert(choise);
+              //currentQuestion++;
+              checkAnswer(choise);
+            } 
           }
          }
          else
@@ -203,6 +218,7 @@ function answerCorrect(answer) {
   }
   else
   {
+    // console.log(currentQuestion);
      alert(` 👎 Wrong answer!\nThe correct answer was: ${quizData[currentQuestion].answer}`);
   }
      // Fades after 1 seconds for both correct and wrong answers
@@ -218,43 +234,50 @@ function answerCorrect(answer) {
 
 // Function to compare user's answer with the correct answer
 function checkAnswer(userEvent) {
-  let userAnswer = "";
-  if (currentQuestion >= 0) {
-  const correctAnswer = quizData[currentQuestion].answer;
+let userAnswer = "";
+const correctAnswer = quizData[currentQuestion].answer;
 
-    if (userEvent === "A") {
+function compareAnswerCounter(counter) {
+  if (counter > quizData.length -1 || currentQuestion > quizData.length -1) 
+           {
+            currentQuestion = -1; 
+           }
+
+}
+
+if (currentQuestion >= 0) {
+  switch (userEvent) {
+    case "A": 
       userAnswer = quizData[currentQuestion].choices[0];
-    }
-    if (userEvent === "B") {
+      break;
+    case "B": 
       userAnswer = quizData[currentQuestion].choices[1];
-    }
-    if (userEvent === "C") {
+      break;
+    case "C": 
       userAnswer = quizData[currentQuestion].choices[2];
-    }
-    if (userEvent === "D") {
+      break;
+    case "D": 
       userAnswer = quizData[currentQuestion].choices[3];
+      break;
     }
-    userAnswer = userAnswer.toUpperCase();
+
+  userAnswer = userAnswer.toUpperCase();
+
+  console.log(userAnswer,' ',correctAnswer);
+
   if (userAnswer === correctAnswer) 
   {    
     answerCorrect(true);
     correctAnswers++;
     currentQuestion++;  
-    if (correctAnswers > quizData.length -1 || currentQuestion > quizData.length -1) 
-           {
-            currentQuestion = -1; 
-           }
+    compareAnswerCounter(correctAnswers);
   } 
   else 
   {
     answerCorrect(false);
     inCorrectAnswers++;
     currentQuestion++;  
-    if (inCorrectAnswers > quizData.length -1 || currentQuestion > quizData.length -1) 
-           {
-            currentQuestion = -1; 
-           }
+    compareAnswerCounter(inCorrectAnswers);    
    } 
   }
 }
-
