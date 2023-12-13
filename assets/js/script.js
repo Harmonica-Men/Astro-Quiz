@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function()
         if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) {
           alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
         } else {
-          correctAnswers = 0;
+          correctAnswers = 0; // initial state of the counters (@begining)
           inCorrectAnswers = 0;
           unknownAnswers = 0; 
         }
@@ -89,13 +89,13 @@ document.addEventListener("DOMContentLoaded", function()
             if (choise === 'X') {
               if (currentQuestion >= quizData.length - 1) {
                 document.getElementById("incorrect").innerText = currentQuestion + 1;
-                currentQuestion = -1;
-              } else currentQuestion++;
+                currentQuestion = -1; // control value to -1 
+              } else currentQuestion++; // flow counter
             } else checkAnswer(choise);
            }
           } else {
           if (currentQuestion > quizData.length -1) {
-            currentQuestion = -1; 
+            currentQuestion = -1; // control value to -1
            }
           }
         runQuiz();
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function()
 
 /**
  * Main loop controlling the quiz flow
- */
+**/
 function runQuiz() 
 {  
   // Functions to display questions, results, and scores
@@ -122,7 +122,6 @@ function runQuiz()
 
 // Function to display the number of questions
 function numberOfQuestions()
-// Function to display the number of questions
 {
   document.getElementById("maxQuestion").innerText = quizData.length;
   if (currentQuestion <= 0) {
@@ -134,9 +133,15 @@ function numberOfQuestions()
 
 // Loop Element function to simplify repative code
 function loopElements(displayVar) {
+  try {
   let elements = [optionAelement, optionBelement, optionCelement, optionDelement];
   for (let i = 0; i < elements.length; i++) {
     elements[i].style.display = displayVar;
+  }
+  }
+  catch(error) {
+    // for debuging perposes only
+    document.getElementById('question').innerHTML = error.messageQuestionElement; 
   }
 }
 
