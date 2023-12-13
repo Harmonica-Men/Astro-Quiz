@@ -63,22 +63,18 @@ img {
         /* Blue with 50% transparency */
 }
 
-
+/* Styling for displaying correct answers */
 #displayCorrectAnswer {
     font-size: 2rem;
 }
 
-
-
+/* Styling for the area containing controls */
 .controls-area {
-
     margin-top: 15px;
     margin-bottom: 15px;
- 
 }
 
-
-
+/* Styling for the area containing the question */
 .question-area {
     width: 50%;
     font-size: 2rem;
@@ -86,30 +82,27 @@ img {
     padding: 50px 0;
 }
 
+/* Styling for spans within the question area */
 .question-area span {
     padding: 0 15px;
 }
 
+/* Styling for the area displaying the score */
 .score-area {
-     display: flex; 
-     flex-wrap: nowrap;
-     padding: 10px;
-    
+    display: flex; 
+    flex-wrap: nowrap;
+    padding: 10px;
     justify-content: space-around;
     align-items: center;
     margin: 5px auto 30px;
     width: 60%;
-    
     font-size: 1.25rem;
     background-color: var(--main-bg-color);
     border-radius: 20px;
     border: 1.5px solid;
-    
 }
 
-
-
-
+/* Styling for the container holding social elements */
 .container-socials {
   padding: 20px;
   display: flex; /* Use flexbox */
@@ -119,29 +112,33 @@ img {
   align-items: center; /* Align items */
   justify-content: space-around; /* Spread items */
   font-size: 3rem;
-  
 }
 
+/* Styling for correct answer */
 #correct {
     color: green;
     font-weight: bold;
 }
 
+/* Styling for incorrect answer */
 #incorrect {
     color: red;
     font-weight: bold;
 }
 
+/* Styling for incorrect unknown answer */
 #unknown {
     color: lightgrey;
     font-weight: bold;
 }
 
+/* Styling for answer message */
 .answer-message {
     display: none;
     font-size: 1rem;
 }
 
+/* Styling for answer box */
 #answer-box {
     border: none;
     color: white;
@@ -151,117 +148,124 @@ img {
     font-size: 1.2rem;
 }
 
-
+/* General button styles */
 button {
     margin: 10px;
 } 
 
+/* Styling for generic button class */
 .btn {
-   /* width: 125px;*/
-   border-radius: 10px;
-/*   padding: 10px; */
-   
+    border-radius: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
-
 }
 
+/* Focus style for buttons */
 .btn:focus {
     outline: none;
 }
 
+/* Styling for large buttons */
 .btn--big {
     padding: 5px;
     background-color: black;
-    border: 5px solid;
-  /*  width: 150px;  */
+    border: 5px solid;  
     height: 75px;
     font-size: 1rem; 
-    /* margin: 0 20px; */
     transition: all 0.5s;
 }
 
+/* Content pseudo-element for big buttons */
 .btn--big::after{
     content: attr(data-type);
     font-size: 0rem;
 }
 
+/* Specific styling for answer choice A */
 .btn--A {
     border-color: magenta;
     color: violet;
-    
 }
 
+/* Hover/active styling for answer choice A */
 .btn--A:active,
 .btn--A:hover {
     background-color: violet;
     color: white;
 }
 
+/* Specific styling for answer choice B */
 .btn--B {
     border-color: orange;
     color: orange;
     padding: 10px;
 }
 
+/* Hover/active styling for answer choice B */
 .btn--B:active,
 .btn--B:hover {
     background-color: darkorange;
     color: white;
 }
 
+/* Specific styling for answer choice C */
 .btn--C {
     border-color: red;
     color: red;
     padding: 10px;
 }
 
+/* Hover/active styling for answer choice C */
 .btn--C:active,
 .btn--C:hover {
     background-color: darkred;
     color: white;
 }
 
+
+/* Hover/active styling for answer choice D */
 .btn--D {
     border-color: yellowgreen;
     color: yellowgreen;
     padding: 10px;
 }
 
+/* Hover/active styling for answer choice D */
 .btn--D:active,
 .btn--D:hover {
     background-color: darkgreen;
     color: white;
 }
 
+/* Styling for a gray button */
 .btn--gray {
     padding-left: 10px;
     padding-right: 10px;
-   
     background-color: gray; 
     border: 3px solid;
     font-size: 1.5rem;
-    /* border-style:outset; */
     height: 7vh;
     border-radius: 20px; 
     transition: all 0.5s;
     margin-bottom: 30px; 
-    
 }
 
+/* Hover/active styling for the gray button */
 .btn--gray:active,
 .btn--gray:hover {
     background-color: lightgray;
     color: black;
 }
 
+/* Styling for the message related to the question */
 #messageQuestion {
     color: gold;
     font-size: 1.75rem;
     padding: 10px;
 }
 
+/* Padding for elements with ID 'correct', 'incorrect', 'unknown' */
 #correct {
     padding-left: 8px;
     padding-right: 8px;
@@ -270,12 +274,12 @@ button {
     padding-left: 8px;
     padding-right: 8px;
 }
-
 #unknown {
     padding-left: 8px;
     padding-right: 8px;
 }
 
+/* Transition effect for the result element */
 #result {
     transition: opacity 1s ease-in-out;
     font-size: 2.25rem;
@@ -291,144 +295,108 @@ button {
          border-radius: 10px;
          flex-wrap: nowrap;
    }
-
 }
 
+/* Media query for devices up to 720px */
 @media (max-width: 720px) {
+/* Adjusting margin for the game area */
 .game-area {
     margin: 0px;
 }    
 
-
+/* Adjusting margin for the controls area */
 .controls-area {
-
-
     margin: 0px;
-
 }
-
 }             
 
-
-
+/* Media query for devices up to 414px */
 @media (max-width: 414px) {
-
+    /* Adjusting font sizes for heading elements */
     h2 {
         font-size: 1rem;
     }
-
     h4 {
         font-size: 1rem;
     }
-    
+
+    /* Making images responsive */
     img {
         width: 100%;
         height: 100%;
     }
           
+    /* Adjusting styles for gray buttons */
     .btn--big {
-        /*  margin: 0 10px; */
-       /* padding: 5px;
-        border: 5px solid; */
-        /* width: 150px; */
         height: 50px;
         font-size: 0.85rem;
     }
 
-  /*  .btn--big::after {
-        font-size: 0.6rem;
-        left: -0.7rem;
-    } */
-
+    /* Adjusting styles for the score area */
     .btn--big::after{
         content: attr(data-type);
         font-size: 0rem;
     }
-/*
-    .question-area {
-        padding: 10% 0;
-        width: 100%;
-    }
 
-    .question-area span {
-        padding: 0;
-    }
-
-    .answer-message {
-        display: block;
-    }
-
-    #answer-box {
-        display: block;
-        margin: 0 auto;
-    }
-    */
-
+    /* Adjusting font size for headings */
     .btn--gray {
         align-items: center;
         width: 150px;
         height: 50px;
         font-size: 0.85rem;
-
     }
 
-
-
+    /* Flexbox adjustments for social media container */
     .score-area {
         width: 75%;
         font-size: 0.95rem;
     }
 
+    /* Adjusting font size for the end message */
     .heading {
         font-size: 2rem;
     }
 
-
-     /* Flexbox adjustments for social media container */
+    /* Flexbox adjustments for social media container */
     .container-socials {
-    justify-content: space-evenly; /* Space items evenly */ 
-    font-size: 1.85rem;
+        justify-content: space-evenly; 
+        font-size: 1.85rem;
     }
 
+    /* Adjusting font size for end */
     #end {
         font-size: 0.85rem;
     }
 
-
-
-
+    /* Adjusting font size for question messages */
     #messageQuestion {
         font-size: 1rem;
     }
 }
 
-
+/* Media query for devices up to 344px */
 @media (max-width: 344px) {
-  
+    /* Adjusting styles for gray buttons */
     .btn--gray {       
         font-size: 0.85rem;
         width: 125px;
         height: 75px;
-        
     }
     
+    /* Adjusting styles for the score area */
     .score-area {
         flex-direction: column;
         height: auto;
         width: 50%;        
     }
-
 }
 
-
+/* Media query for devices up to 180px */
 @media (max-width: 180px) {
     .btn--gray {
         width: 90px;
         height: 55px;
         font-size: 0.7rem;
-
     }
-
-
 }
   
