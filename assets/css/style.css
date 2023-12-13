@@ -394,6 +394,7 @@ button {
 /* Media query for devices up to 180px */
 @media (max-width: 180px) {
     .btn--gray {
+    /* Adjusting styles for gray buttons */
         width: 90px;
         height: 55px;
         font-size: 0.7rem;
