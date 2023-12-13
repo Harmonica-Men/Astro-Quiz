@@ -17,14 +17,14 @@ Because this is a multiple-choice question method.
 The user knows in advance that at least one choice is correct.
 Even with deductive reasoning, the answers can be guessed because there is only one best answer.
 
-There are actual counters built in to keep track of the correct and incorrect answers, and the questions that are unanswered are counted.
+There are actual counters built in to keep track of the correct and incorrect answers, and the questions that are unanswered are also counted.
 
 ## User Story
 In classical multiple-choice game play, points are granted for correct answers, and if answers are wrong, points can be penalized.
-When answers are not given, there are points to be gained.
+When answers are not given, there are no points to be gained.
 
 ## Features/Heading
-The answers are embedded into multiple-choice buttons to give a more smooth user experience
+The answers are embedded into multiple-choice buttons to give a more smooth user experience.
 
 As an extra feature, social media links are built into external links and other media platforms.
 
@@ -50,11 +50,11 @@ Timer is required to level up the User Experience and higher cognitive thinking 
 ### Languages
 
 - HTML
-  - Page markup
+  - Page markup.
 - CSS
   - Styling.
 - JS
-  - Javascript code for gameplay
+  - Javascript code for gameplay.
 
 ### Tools
 - Google Fonts
@@ -62,12 +62,12 @@ Timer is required to level up the User Experience and higher cognitive thinking 
 - Favicon
   - In Flaticon the Saturn favicon was used [favicon](https://www.flaticon.com/free-icon/saturn_5005667?related_id=5005667)
     
-    ![Fav Saturn](assets/images/wireframes/favicon-128x128.png)
+  ![Fav Saturn](assets/images/wireframes/favicon-128x128.png)
 
 - Colors
   - The Color scheme comes from [colorhunt](https://colorhunt.co/)
   
-  ![Alt text](assets/images/wireframes/colors-schema.png)
+  ![colors](assets/images/wireframes/colors-schema.png)
 
 ### Other Tools
 
@@ -86,7 +86,7 @@ No errors were returned when passing through the official W3C validator
 ![HTML Validation](assets/images/wireframes/html-validator-test.png)
 CSS
 No errors were found when passing through the official (Jigsaw) validator
-![CSS Validation](assets/images/wireframes/CSS-validator-test.png)
+![CSS Validation](assets/images/wireframes/css-validator-test.png)
 
 HTML has been validated with the W3C HTML5 Validator.
 
@@ -97,32 +97,28 @@ Links are checked with the W3C Link Checker.
 Each JavaScript file was tested on the site for errors and functionality using the console and JSHint.
 
 ## Deployment
+There is already a life version online running on the GitHub, [Here](https://harmonica-men.github.io/Astro-Quiz/) the repo is located [here](https://github.com/Harmonica-Men/Astro-Quiz)
 
-### For Local Deployment
-Local Preparation
-
-Requirements:
-- Any modern IDE of would work, but in this example I use the most popular today: Visual Studio Code
-- Git is standard on the latest linux distribution in case your using Windows you need to download the Git Repo.
-
-### Local Instructions
-On 
-Download a copy of the project repository here and extract the zip file to your base folder. Or you can clone the repository with:
-git clone https://github.com/Ri-Dearg/neverlost-thrift
+### For Deployment over the Internet
+- make a deticated Ubuntu Linux Server (latest version can be downloaded) here - [download](https://ubuntu.com/download/server)
+- go via the SSH-protocol to your local linux webserver and install the lastest Apache2 webserver [download](https://httpd.apache.org/download.cgi) or use the 'sudo apt install apache2' command.
+- Make sure that apache2 services is running on the local server! check whit command 'sudo systemctl status apache2'
+- go 'www' directory and copy via the SCP-protocol a copy of github repository into the your local 'www' directory.
+- a detailed step by step guide: How To Download GitHud Repo, can be found [here](https://www.gitkraken.com/learn/git/github-download#how-to-download-a-github-repository)
+- make sure that 'index.html' file and the corresponding directory hierachy is present in this directory 'www'
+- restart the apache2 service (reload webserver) 'sudo systemctl restart apache2'
+- goto your browers and type the specific IP-address or domain-name of your web-server and access the web page.
+- If everything goes well and routed correctly to your network, the website is now published on the internet.
 
 ## Credits
 
-- I love maths PP2 - code institute - guidelines
-
+- I love maths PP2 - code institute - guidelines - Here I used the Eventlistener and mofied the code for it to work for multiple choise questions.
   - DOM Elements & Event Listener
   - Buttons and layout
-
-- https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/ - a guide to help me get started with creating a quiz.
-- W3Schools:
+- [geekforgeeks](https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/) - a guide to help me get started with creating a quiz.
+- [W3Schools](https://www.w3schools.com/html/)
   Sitepoint - a guide to help me get started with creating a quiz.
-- pexels: background image and banner
-- Science Bowl Questions and Answers
-  ASTR-91; Short Answer: Elliptical, Spiral and Irregular are classifications of what type of astronomical systems? ANSWER: GALAXIES. Page 10. Science Bowl.
-- PDF https://www.csun.edu/science/ref/games/questions/97_astr.pdf quiz questions
-- Favicon https://www.flaticon.com/free-icons/saturn
+- [pexels](https://www.pexels.com/search/images%20free%20download/): background image and banner, free online pictures libary.
+- The Science Bowl Questions and Answers ASTR-91: [PDF](https://www.csun.edu/science/ref/games/questions/97_astr.pdf)  quiz questions & answers
+- [Favicon](https://www.flaticon.com/free-icons/saturn) free online favicons libary.
 

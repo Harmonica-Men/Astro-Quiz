@@ -213,6 +213,7 @@ function compareAnswerCounter(counter) {
     }
 }
 
+// rather use case the if-else statement
 if (currentQuestion >= 0) {
   switch (userEvent) {
     case "A": 
