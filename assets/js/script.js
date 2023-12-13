@@ -182,7 +182,7 @@ function showScore() {
 
 // Functions related to handling user answers and providing feedback
 function answerCorrect(answer) {
-   // Function to display feedback for correct and incorrect answers
+  // Function to display feedback for correct and incorrect answers
   var resultDiv = document.getElementById('result');
   if (answer === true) {
     resultDiv.innerHTML = '👍 Correct!';
@@ -206,6 +206,7 @@ function checkAnswer(userEvent) {
 let userAnswer = "";
 const correctAnswer = quizData[currentQuestion].answer;
 
+// Function compare answer with the use of OR statement
 function compareAnswerCounter(counter) {
   if (counter > quizData.length -1 || currentQuestion > quizData.length -1) 
     {
@@ -231,7 +232,7 @@ if (currentQuestion >= 0) {
     }
 
   userAnswer = userAnswer.toUpperCase();
-
+  // update counters   
   if (userAnswer === correctAnswer) 
   {    
     answerCorrect(true);
