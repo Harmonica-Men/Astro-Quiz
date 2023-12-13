@@ -11,6 +11,7 @@
     --border-color: #99999c;
     /* Border color */
 }
+
 /* --------- Global style */
 /* Styling for the body */
 body {
@@ -18,12 +19,9 @@ body {
     font-family: "Raleway", sans-serif;
     color: white;
     text-align: center;
-    
-     width: 100%; 
-   /* height: 1100px; /* Set your desired height */
+    width: 100%; 
     background-image: url("../images/universe.jpeg");
     background-size: cover;
-  
 }
 
 /* Heading styles */
@@ -34,16 +32,12 @@ h2 {
 h4 {
     font-size: 1.25rem;
 }
-/*
-p {
-    font-size: 1rem;
-}
-*/
+
 img {
     width: 100%;
     max-width: 400px;
     height: auto;
-  }
+}
   
 
 /* Heading and banner styles */
@@ -60,7 +54,6 @@ img {
     border: 2px solid;
     border-radius: 25px;
     background-color: rgba(54, 7, 163, 0.438);
-        /* Blue with 50% transparency */
 }
 
 /* Styling for displaying correct answers */
@@ -222,7 +215,6 @@ button {
     background-color: darkred;
     color: white;
 }
-
 
 /* Hover/active styling for answer choice D */
 .btn--D {
