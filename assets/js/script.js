@@ -62,72 +62,57 @@ const quizData = [
 // booting up the DOM then run the Quiz
 // button elements A,B,C,D for event handelers to listen
 // Function to initialize and start the quiz on DOM content load
+// Event Listener from 'I love math' PP2 Codeinstitute
 document.addEventListener("DOMContentLoaded", function () {
-  initializeQuiz();
-});
-
-function initializeQuiz() {
   // Event listeners for quiz buttons
   let buttons = document.getElementsByTagName("button");
   // button into the array
   for (let button of buttons) {
-    // Logic for handling user interactions and quiz progress
-    button.addEventListener("click", handleButtonClick);
+    button.addEventListener(
+      "click",
+      function () // Logic for handling user interactions and quiz progress
+      {
+        if (this.getAttribute("data-type") === "X") {
+          if (currentQuestion > -1) {
+            unknownAnswers++;
+          }
+          if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) {
+            alert(
+              `The correct answer was: ${quizData[currentQuestion].answer}`
+            );
+          } else {
+            correctAnswers = 0; // initial state of the counters (@begining)
+            inCorrectAnswers = 0;
+            unknownAnswers = 0;
+          }
+        } else document.getElementById("next-question").innerText = "Game Over";
+        {
+          let choise = this.getAttribute("data-type");
+
+          if (currentQuestion <= quizData.length - 1) {
+            if (currentQuestion < 0) {
+              currentQuestion = 0;
+            } else {
+              if (choise === "X") {
+                if (currentQuestion >= quizData.length - 1) {
+                  document.getElementById("incorrect").innerText =
+                    currentQuestion + 1;
+                  currentQuestion = -1; // control value to -1
+                } else currentQuestion++; // flow counter
+              } else checkAnswer(choise);
+            }
+          } else {
+            if (currentQuestion > quizData.length - 1) {
+              currentQuestion = -1; // control value to -1
+            }
+          }
+          runQuiz();
+        }
+      }
+    );
   }
   runQuiz();
-}
-
-function handleButtonClick() {
-  if (this.getAttribute("data-type") === "X") {
-    if (currentQuestion > -1) {
-      unknownAnswers++;
-    }
-    if (currentQuestion <= quizData.length - 1 && currentQuestion > -1) {
-      alert(`The correct answer was: ${quizData[currentQuestion].answer}`);
-    } else {
-      correctAnswers = 0; // initial state of the counters (@beginning)
-      inCorrectAnswers = 0;
-      unknownAnswers = 0;
-    }
-  } else {
-    document.getElementById("next-question").innerText = "New Game ?";
-    let choice = this.getAttribute("data-type");
-
-    if (currentQuestion <= quizData.length - 1) {
-      if (currentQuestion < 0) {
-        currentQuestion = 0;
-      } else {
-        if (choice === "X") {
-          if (currentQuestion >= quizData.length - 1) {
-            document.getElementById("incorrect").innerText =
-              currentQuestion + 1;
-            currentQuestion = -1; // control value to -1
-          } else currentQuestion++; // flow counter
-        } else checkAnswer(choice);
-      }
-    } else {
-      if (currentQuestion > quizData.length - 1) {
-        currentQuestion = -1; // control value to -1
-      }
-    }
-    runQuiz();
-  }
-}
-
-/**
- * Main loop controlling the quiz flow
- **/
-function runQuiz() {
-  // Functions to display questions, results, and scores
-  numberOfQuestions();
-  if (currentQuestion <= quizData.length && currentQuestion > -1) {
-    showQuestion();
-  } else {
-    showResults();
-  }
-  showScore();
-}
-
+});
 
 /**
  * Main loop controlling the quiz flow

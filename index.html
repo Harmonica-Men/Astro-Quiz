@@ -1,124 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- Meta tags and document title -->
     <title>Astro Quiz</title>
     <!-- Favicon and meta tags for theme color, viewport, and author -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Astro-Quiz" content="Author: Filip Van Elslande">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Astro-Quiz" content="Author: Filip Van Elslande" />
     <!-- External CSS files for styling -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
     <!-- where is the style  -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <!-- Header section -->
     <header>
       <!-- Heading and banner for the quiz -->
-      <img class="heading" src="assets/images/astro-quiz.webp" alt="Banner for the Astro-Quiz"> 
+      <img
+        class="heading"
+        src="assets/images/astro-quiz.webp"
+        alt="Banner for the Astro-Quiz"
+      />
       <h2>How much do you know about the Universe?</h2>
     </header>
 
     <!-- Main quiz content -->
-    <main> 
+    <main>
       <div class="game-area">
         <!-- Quiz elements - question, answer options, controls, and score -->
         <h4 id="quote">Questions are more important than Answers?</h4>
-          
-          <div class="quest">
-              <p class="answer-message">A</p>
-          </div>      
 
-          <p class="question-para">
-            Question: <span id="question"></span> / <span id="maxQuestion"></span> 
-          </p>
+        <div class="quest">
+          <p class="answer-message">A</p>
+        </div>
 
-          <div id="result"></div>
+        <p class="question-para">
+          Question: <span id="question"></span> / <span id="maxQuestion"></span>
+        </p>
+
+        <div id="result"></div>
 
         <div id="messageQuestion"></div>
-          <!-- Buttons for answer choices -->
-          <div class="controls-area">
-            <button data-type="A" class="btn btn--big btn--A" id="optionA"></button>
-            <button data-type="B" class="btn btn--big btn--B" id="optionB"></button>
-            <button data-type="C" class="btn btn--big btn--C" id="optionC"></button>
-            <button data-type="D" class="btn btn--big btn--D" id="optionD"></button>
+        <!-- Buttons for answer choices -->
+        <div class="controls-area">
+          <button
+            data-type="A"
+            class="btn btn--big btn--A"
+            id="optionA"
+          ></button>
+          <button
+            data-type="B"
+            class="btn btn--big btn--B"
+            id="optionB"
+          ></button>
+          <button
+            data-type="C"
+            class="btn btn--big btn--C"
+            id="optionC"
+          ></button>
+          <button
+            data-type="D"
+            class="btn btn--big btn--D"
+            id="optionD"
+          ></button>
         </div>
-        
-          <!-- Button for proceeding to the next question or starting a new game -->
-          <button data-type="X" class="btn btn--gray">
-            <span id="next-question">Next Question!</span>
-          </button>
-          <!-- Other score elements -->
-          <div class="score-area">
-            Correct Answers:<span id="correct">0</span> 
-            Incorrect Answers:<span id="incorrect">0</span>       
-            Unknown Answers:<span id="unknown">0</span> 
-          </div>
+
+        <!-- Button for proceeding to the next question or starting a new game -->
+        <button data-type="X" class="btn btn--gray">
+          <span id="next-question">Next Question!</span>
+        </button>
+        <!-- Other score elements -->
+        <div class="score-area">
+          Correct Answers:<span id="correct">0</span> Incorrect Answers:<span
+            id="incorrect"
+            >0</span
+          >
+          Unknown Answers:<span id="unknown">0</span>
+        </div>
       </div>
-    </main> 
+    </main>
 
-  <footer>
-    <!-- Footer section containing social links and copyright information -->
-    <section class="container-main">
-      <h3>Socails</h3>
-      <!-- Footer content -->
-      <div class="footer">
-        <!-- Container for social media links -->
-        <div class="container-socials">
-          <!-- LinkedIn social link -->
-            <a href="https://www.linkedin.com/" style="color:var(--main-text-color)" aria-label="linkedin-label" target="_blank">
-              <i class="fab fa-linkedin"></i> <!-- LinkedIn icon -->
-            </a>
-         
-          <!-- Twitter social link -->
-            <a href="https://twitter.com/" style="color:var(--main-text-color)" aria-label="twitter-label" target="_blank">
-              <i class="fab fa-twitter"></i> <!-- Twitter icon -->
-            </a>
-         
-          <!-- Instagram social link -->
-            <a href="https://www.instagram.com" style="color:var(--main-text-color)" aria-label="instagram-label" target="_blank">
-              <i class="fab fa-instagram"></i> <!-- Instagram icon -->
-            </a>
-         
-          <!-- Facebook social link -->
-            <a href="https://www.facebook.com/" style="color:var(--main-text-color)" aria-label="facebook-label" target="_blank">
-              <i class="fab fa-facebook"></i> <!-- Facebook icon -->
+    <footer>
+      <!-- Footer section containing social links and copyright information -->
+      <section class="container-main">
+        <h3>Socails</h3>
+        <!-- Footer content -->
+        <div class="footer">
+          <!-- Container for social media links -->
+          <div class="container-socials">
+            <!-- LinkedIn social link -->
+            <a
+              href="https://www.linkedin.com/"
+              style="color: var(--main-text-color)"
+              aria-label="linkedin-label"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+              <!-- LinkedIn icon -->
             </a>
 
-          <!-- Code Institute website link -->
-            <a href="https://www.codeinstitute.net/" style="color:var(--main-text-color)" aria-label="website-label" target="_blank">
-              <i class="fas fa-globe"></i> <!-- Globe icon -->
+            <!-- Twitter social link -->
+            <a
+              href="https://twitter.com/"
+              style="color: var(--main-text-color)"
+              aria-label="twitter-label"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"></i>
+              <!-- Twitter icon -->
             </a>
-          
-        </div>
-        <!-- Copyright information -->
-        <div id="end">
+
+            <!-- Instagram social link -->
+            <a
+              href="https://www.instagram.com"
+              style="color: var(--main-text-color)"
+              aria-label="instagram-label"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+              <!-- Instagram icon -->
+            </a>
+
+            <!-- Facebook social link -->
+            <a
+              href="https://www.facebook.com/"
+              style="color: var(--main-text-color)"
+              aria-label="facebook-label"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+              <!-- Facebook icon -->
+            </a>
+
+            <!-- Code Institute website link -->
+            <a
+              href="https://www.codeinstitute.net/"
+              style="color: var(--main-text-color)"
+              aria-label="website-label"
+              target="_blank"
+            >
+              <i class="fas fa-globe"></i>
+              <!-- Globe icon -->
+            </a>
+          </div>
+          <!-- Copyright information -->
+          <div id="end">
             <!-- Year and name as copyright -->
             <span class="copyright"> © </span>2023 - Astro Quiz.
-            <br>
-             Quiz created by Filip Van Elslande for Portfolio Project 2 - Javascript Essentials
+            <br />
+            Quiz created by Filip Van Elslande for Portfolio Project 2 -
+            Javascript Essentials
+          </div>
         </div>
-      </div>
-    </section>
-  </footer>
-    
+      </section>
+    </footer>
+
     <!-- where is the javascript -->
     <script src="assets/js/script.js"></script>
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </body>
+</html>
