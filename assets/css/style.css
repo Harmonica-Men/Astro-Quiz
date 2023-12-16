@@ -223,7 +223,7 @@ button {
 .btn--gray {
   padding-left: 10px;
   padding-right: 10px;
-  background-color: darkgrey;
+  background-color: rgb(87, 87, 87);
   border: 3px solid;
   font-size: 1.5rem;
   height: 7vh;
