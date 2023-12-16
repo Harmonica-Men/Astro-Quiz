@@ -69,11 +69,6 @@ img {
   padding: 50px 0;
 }
 
-/* Styling for spans within the question area */
-.question-area span {
-  padding: 0 15px;
-}
-
 /* Styling for the area displaying the score */
 .score-area {
   display: flex;
