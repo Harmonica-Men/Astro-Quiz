@@ -66,7 +66,7 @@ const quizData = [
 document.addEventListener("DOMContentLoaded", function () {
   // Event listeners for quiz buttons
   let buttons = document.getElementsByTagName("button");
-  // button into the array
+  
   for (let button of buttons) {
     button.addEventListener(
       "click",
@@ -202,7 +202,7 @@ function answerCorrect(answer) {
   // Function to display feedback for correct and incorrect answers
   var resultDiv = document.getElementById("result");
   if (answer === true) {
-    resultDiv.innerHTML = "👍 Correct!";
+    resultDiv.innerHTML = '👍 Correct!';
   } else {
     // console.log(currentQuestion);
     alert(

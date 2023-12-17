@@ -23,10 +23,15 @@ There are actual counters built in to keep track of the correct and incorrect an
 In classical multiple-choice game play, points are granted for correct answers, and if answers are wrong, points can be penalized.
 When answers are not given, there are no points to be gained.
 
-## Features/Heading
-The answers are embedded into multiple-choice buttons to give a more smooth user experience.
-
-As an extra feature, social media links are built into external links and other media platforms.
+## Features 
+* All buttons in the game-area have nice hover effects and have a good background contrast. 
+* Socails links to all major media platforms.
+* A counter in the game-area to see the progress of player.
+* To have an instant game score of correct, wrong and skipped answers.
+* A thumbs-up indicator to acknowledge the player (include fade effect)
+* An alert box pops up when an answer is wrong. Give the correct answer to learn from the mistake.
+* If the question is skipped, a pop-up box gives the correct answer.
+* If all questions are answered, the player is given the choise to play the game again.
 
 ## Wireframe
 The design is made different media device
@@ -88,6 +93,8 @@ CSS
 No errors were found when passing through the official (Jigsaw) validator
 ![CSS Validation](assets/images/wireframes/css-validator-test.png)
 
+As we in detail of the Accessibility
+![CSS Accessibility](assets/images/wireframes/css-validator-test-accessibility.png)
 HTML has been validated with the W3C HTML5 Validator.
 
 CSS has been validated with the W3C CSS Validator and auto-prefixed with the CSS Autoprefixer.
@@ -95,6 +102,11 @@ CSS has been validated with the W3C CSS Validator and auto-prefixed with the CSS
 Links are checked with the W3C Link Checker.
 
 Each JavaScript file was tested on the site for errors and functionality using the console and JSHint.
+* There seems to be an issue of the functions of the DOM EventListner, theoretically I could this outside the function, but I can be difficult to handle the 'click' button events individually.
+* To have control over the Array from begin to end, there was a need for flow control over 'currentQuestion' counter. To have control over the beginning and the end of the game, there was need to set this value explicit to either 0 or -1. 
+* When 'currentQuestion' value is and maximum value of the data array the exception has to introduce to the Event Lister to handle the documents Elements differently either hiding them or show them in the game-area container. 
+* This same 'trick' is also implied into the buttons of the options choices, here JS is handle them as an object with for example button option 'A' and  inner text empty by initialization but when DOM elements are loaded each option button retrieve the values of the current data array. 
+
 
 ## Deployment
 There is already a life version online running on the GitHub, [Here](https://harmonica-men.github.io/Astro-Quiz/) the repo is located [here](https://github.com/Harmonica-Men/Astro-Quiz)
