@@ -84,7 +84,7 @@ This site was built using [GitHub Pages](https://pages.github.com/)
 ### Manual Testing
 The overall performence test on Lighthouse (dev-tools) has a 97% score 
 ![Lighthouse](assets/images/wireframes/lighthouse.png)
-As we in detail of the Accessibility
+As we go in detail of the Accessibility
 ![CSS Accessibility](assets/images/wireframes/css-validator-test-accessibility.png)
 
 Validator Testing
