@@ -84,18 +84,20 @@ This site was built using [GitHub Pages](https://pages.github.com/)
 ### Manual Testing
 The overall performence test on Lighthouse (dev-tools) has a 97% score 
 ![Lighthouse](assets/images/wireframes/lighthouse.png)
+
 As we go in detail of the Accessibility
+
 ![CSS Accessibility](assets/images/wireframes/css-validator-test-accessibility.png)
 
-Validator Testing
-HTML
-No errors were returned when passing through the official W3C validator
+Validator Testing HTML: No errors were returned when passing through the official W3C validator
+
 ![HTML Validation](assets/images/wireframes/html-validator-test.png)
-CSS
-No errors were found when passing through the official (Jigsaw) validator
+
+CSS: No errors were found when passing through the official (Jigsaw) validator
+
 ![CSS Validation](assets/images/wireframes/css-validator-test.png)
 
-* HTML has been validated with the W3C HTML5 Validator.
+* HTML: has been validated with the W3C HTML5 Validator.
 
 * CSS has been validated with the W3C CSS Validator and auto-prefixed with the CSS Autoprefixer.
 * Links are checked with the W3C Link Checker.
