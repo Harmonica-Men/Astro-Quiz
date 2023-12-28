@@ -50,17 +50,6 @@ So I can challenge myself and learn more about the wonders of the universe.
 * Incorporating images or multimedia content related to questions could enhance the learning experience.
 * Accessibility features should be considered to ensure inclusivity for users with disabilities.
 
-
-
-
-
-
-
-
-
-
-
-
 ## Features 
 * All buttons in the game-area have nice hover effects and have a good background contrast. 
 * Socails links to all major media platforms.
