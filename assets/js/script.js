@@ -15,35 +15,35 @@ const quizData = [
   // Questions and answers data here
   {
     question:
-      "1 The largest circular storm in our solar system is on the surface of which of the following planets?",
+      "1) The largest circular storm in our solar system is on the surface of which of the following planets?",
     choices: ["Jupiter", "Venus", "Uranus", "Earth"],
     answer: "JUPITER",
   },
   {
     question:
-      "2 The rapidly moving stream of charged particles that is being driven away from the sun is known as what?",
+      "2) The rapidly moving stream of charged particles that is being driven away from the sun is known as what?",
     choices: ["Star Dust", "Charged Particles", "Solar Wind", "Cosmic Rays"],
     answer: "SOLAR WIND",
   },
   {
-    question: "3 The biggest asteroid known is:",
+    question: "3) The biggest asteroid known is:",
     choices: ["Vesta", "Icarus", "Ceres", "Eros"],
     answer: "CERES",
   },
   {
-    question: "4 Rounded to the nearest day, the Mercurian year is equal to:",
+    question: "4) Rounded to the nearest day, the Mercurian year is equal to:",
     choices: ["111 days", "88 days", "50 days", "25 days"],
     answer: "88 DAYS",
   },
   {
     question:
-      "5 One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
+      "5) One of the largest volcanos in our solar system-if not the largest-is named Olympus Mons. This volcano is located on:",
     choices: ["Callisto", "Venus", "Titan", "Mars"],
     answer: "MARS",
   },
   {
     question:
-      "6 Of the following four times, which one best represents the time it takes energy generated in the core of the sun to reach the surface of the sun and be radiated?",
+      "6) Of the following four times, which one best represents the time it takes energy generated in the core of the sun to reach the surface of the sun and be radiated?",
     choices: [
       "Three minutes",
       "Thirty days",
@@ -53,7 +53,7 @@ const quizData = [
     answer: "ONE MILLION YEARS",
   },
   {
-    question: "7 The sunspot cycle is:",
+    question: "7) The sunspot cycle is:",
     choices: ["3 years", "11 years", "26 years", "49 years"],
     answer: "11 YEARS",
   },
@@ -87,19 +87,19 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         } else document.getElementById("next-question").innerText = "Game Over";
         {
-          let choise = this.getAttribute("data-type");
+          let choice = this.getAttribute("data-type");
 
           if (currentQuestion <= quizData.length - 1) {
             if (currentQuestion < 0) {
               currentQuestion = 0;
             } else {
-              if (choise === "X") {
+              if (choice === "X") {
                 if (currentQuestion >= quizData.length - 1) {
                   document.getElementById("incorrect").innerText =
                     currentQuestion + 1;
                   currentQuestion = -1; // control value to -1
                 } else currentQuestion++; // flow counter
-              } else checkAnswer(choise);
+              } else checkAnswer(choice);
             }
           } else {
             if (currentQuestion > quizData.length - 1) {
@@ -200,7 +200,7 @@ function showScore() {
 // Functions related to handling user answers and providing feedback
 function answerCorrect(answer) {
   // Function to display feedback for correct and incorrect answers
-  var resultDiv = document.getElementById("result");
+  let resultDiv = document.getElementById("result");
   if (answer === true) {
     resultDiv.innerHTML = '👍 Correct!';
   } else {
