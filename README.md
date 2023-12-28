@@ -126,10 +126,10 @@ The design is made different media device
 ## Features to be implemented?
 * If a JSON build input is implemented, it can potentially be added to provide more questions.
 * Timer is required to level up the User Experience and higher cognitive thinking is required.
-* Leaderboard, keep track of the players and there scores
+* Leaderboard, keep track of the players and there scores.
+* A difficult grade should be implemented in different entery levels like easy, medium or hard. 
 
 ## Technologies Used
-
 ### Languages
 - HTML
   - Page markup.
@@ -161,16 +161,14 @@ The design is made different media device
 This site was built using [GitHub Pages](https://pages.github.com/)
 
 ### Manual Testing
-The overall performence test on Lighthouse (dev-tools) has a 97% score 
+The overall performence test on Lighthouse (dev-tools) has a 96% score 
 ![Lighthouse](assets/images/wireframes/lighthouse.png)
 <a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
-
 
 As we go in detail of the Accessibility
 
 ![CSS Accessibility](assets/images/wireframes/css-validator-test-accessibility.png)
 <a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
-
 
 Validator Testing HTML: No errors were returned when passing through the official W3C validator
 
