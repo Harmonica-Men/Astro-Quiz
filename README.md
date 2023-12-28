@@ -20,8 +20,46 @@ Even with deductive reasoning, the answers can be guessed because there is only 
 There are actual counters built in to keep track of the correct and incorrect answers, and the questions that are unanswered are also counted.
 
 ## User Story
-In classical multiple-choice game play, points are granted for correct answers, and if answers are wrong, points can be penalized.
-When answers are not given, there are no points to be gained.
+As a(n) avid astronomy enthusiast,
+I want to test my knowledge of celestial bodies and space exploration,
+So I can challenge myself and learn more about the wonders of the universe.
+
+### Acceptance Criteria:
+
+* As a user, I can access the Astronomy Quiz app from my smartphone or computer.
+* Upon opening the app, I am presented with an intuitive interface to start the quiz.
+* I can choose the difficulty level of the quiz (easy, medium, or hard).
+* The quiz comprises multiple-choice questions related to astronomy, including topics like planets, stars, galaxies, and space missions.
+* Each question has a time limit for answering, adding a level of challenge.
+* After selecting an answer, I receive immediate feedback on whether my choice was correct or incorrect.
+* For incorrect answers, the app provides the correct answer and a brief explanation or fact related to the question.
+* At the end of the quiz, I receive a summary of my performance, including the number of correct and incorrect answers.
+* There is an option to share my quiz results on social media platforms.
+* The app keeps track of my quiz history and allows me to revisit previous quizzes or review questions I've answered incorrectly.
+* There is an option to bookmark questions for further research or study.
+
+### Constraints:
+
+* The app should be accessible across various devices (iOS, Android, web browser).
+* Questions should cover a broad range of topics within astronomy and space exploration.
+* The interface should be user-friendly and visually engaging to encourage participation.
+
+### Additional Notes:
+
+* To enhance engagement, consider adding a leaderboard feature to allow users to compete with friends or globally.
+* Incorporating images or multimedia content related to questions could enhance the learning experience.
+* Accessibility features should be considered to ensure inclusivity for users with disabilities.
+
+
+
+
+
+
+
+
+
+
+
 
 ## Features 
 * All buttons in the game-area have nice hover effects and have a good background contrast. 
