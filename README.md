@@ -1,3 +1,37 @@
+# CONTENTS
+* [Astro-Quiz](#astro-quiz)
+  * [Intro](#intro)
+  * [UX](#ux---astronomy-quiz-user-experience)
+    * [Landing Page](#landing-page)
+    * [Quiz Interface](#quiz-interface)
+      * [Feedback and Learning](#feedback-and-learning)
+      * [Explanation and Facts](#explanation-and-facts)
+    * [Completion and Results](#completion-and-results)
+      * [Summary and Score](#summary-and-score)
+    * [Social Sharing](#social-sharing)
+    * [Additional Features](#additional-features)
+  * [Leaderboard (optional)](#leaderboard-optional)
+    * [Accessibility and Responsiveness](#accessibility-and-responsiveness)
+    * [Accessibility Features](#accessibility-features)
+  * [User Story](#user-story)
+    * [Acceptance Criteria](#acceptance-criteria)
+    * [Constraints](#constraints)
+    * [Additional Notes](#additional-notes)
+  * [Features](#features)
+  * [Wireframe](#wireframe)
+    * [Smartphones](#wireframe)
+    * [Tablets](#wireframe)
+    * [Desktops](#wireframe)
+  * [Features to be implemented?](#features-to-be-implemented)
+  * [Technologies Used](#technologies-used)
+    * [Languages](#languages)
+    * [Tools](#tools)
+    * [Other Tools](#other-tools)
+    * [Manual Testing](#manual-testing)
+    * [Deployment](#deployment)
+    * [For Deployment over the Internet](#for-deployment-over-the-internet)
+  * [Credits](#credits)
+
 # Astro-Quiz
 
 How much do you know about the Universe?
@@ -7,28 +41,44 @@ For demonstration purposes, this quiz is limited to seven questions.
 Regardless of the difficulty level of the questions, the audiences of different ages can be targeted.
 
 ## Intro
-
 ![responiveness](assets/images/wireframes/responsive.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
-## UX
-Because this is a multiple-choice question method.
-(A multiple-choice item consists of a problem, known as the stem, and a list of suggested solutions, known as alternatives.)
+## UX - Astronomy Quiz User Experience
+### Landing Page
+* Welcome Screen: Upon opening the app or website, users are greeted with a captivating cosmic-themed landing page, showcasing stunning celestial background image.
+### Quiz Interface
+### Feedback and Learning
+### Explanation and Facts
+* For incorrect answers, the quiz provides the correct answer along with a brief explanation or interesting fact related to the question, fostering learning and curiosity.
+* Encouragement, positive reinforcement and encouraging messages after correct answers maintain user engagement and motivation throughout the quiz.
+### Completion and Results
+### Summary and Score
+* Upon completing the quiz, users receive a summary of their performance, displaying the number of correct and incorrect answers, along with their final score.
+### Social Sharing
+* An option to share results on social media platforms encourages users to challenge friends and share their achievements.
+* (Optional) Review:  Users can choose to review their answers, allowing them to revisit questions, explanations, and expand their knowledge base.
+### Additional Features
+* (Optional) Quiz History: A section to track previous quiz attempts and scores, enabling users to monitor their progress over time.
+Bookmarking: An option to bookmark specific questions for further exploration or study outside the quiz.
 
-The user knows in advance that at least one choice is correct.
-Even with deductive reasoning, the answers can be guessed because there is only one best answer.
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
-There are actual counters built in to keep track of the correct and incorrect answers, and the questions that are unanswered are also counted.
+## Leaderboard (Optional)
+* A global or friend-based leaderboard to foster competition among users, adding a competitive and social aspect to the experience.
+### Accessibility and Responsiveness
+### Accessibility Features
+* Responsive Design: Ensuring the app or website functions seamlessly across various devices, providing an optimal experience on smartphones, tablets, and desktops.
 
 ## User Story
 As a(n) avid astronomy enthusiast,
 I want to test my knowledge of celestial bodies and space exploration,
 So I can challenge myself and learn more about the wonders of the universe.
 
-### Acceptance Criteria:
-
+### Acceptance Criteria
 * As a user, I can access the Astronomy Quiz app from my smartphone or computer.
 * Upon opening the app, I am presented with an intuitive interface to start the quiz.
-* I can choose the difficulty level of the quiz (easy, medium, or hard).
+* The difficulty level of the quiz is not set but level questions is.
 * The quiz comprises multiple-choice questions related to astronomy, including topics like planets, stars, galaxies, and space missions.
 * Each question has a time limit for answering, adding a level of challenge.
 * After selecting an answer, I receive immediate feedback on whether my choice was correct or incorrect.
@@ -38,17 +88,17 @@ So I can challenge myself and learn more about the wonders of the universe.
 * The app keeps track of my quiz history and allows me to revisit previous quizzes or review questions I've answered incorrectly.
 * There is an option to bookmark questions for further research or study.
 
-### Constraints:
-
+### Constraints
 * The app should be accessible across various devices (iOS, Android, web browser).
 * Questions should cover a broad range of topics within astronomy and space exploration.
 * The interface should be user-friendly and visually engaging to encourage participation.
 
-### Additional Notes:
-
+### Additional Notes
 * To enhance engagement, consider adding a leaderboard feature to allow users to compete with friends or globally.
 * Incorporating images or multimedia content related to questions could enhance the learning experience.
 * Accessibility features should be considered to ensure inclusivity for users with disabilities.
+
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
 ## Features 
 * All buttons in the game-area have nice hover effects and have a good background contrast. 
@@ -62,25 +112,25 @@ So I can challenge myself and learn more about the wonders of the universe.
 
 ## Wireframe
 The design is made different media device
-
-- smartphone
+* smartphones
   ![smartphone](assets/images/wireframes/pp2-smartphone1.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
-- tablet
+* tablet
   ![tablet](assets/images/wireframes/pp2-wireframe-tablet-1.png)
-
-- desktop
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
+* desktop
   ![desktop](assets/images/wireframes/pp2-wireframe-desktop.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
 ## Features to be implemented?
-If a JSON build input is implemented, it can potentially be added to provide more questions.
-
-Timer is required to level up the User Experience and higher cognitive thinking is required.
+* If a JSON build input is implemented, it can potentially be added to provide more questions.
+* Timer is required to level up the User Experience and higher cognitive thinking is required.
+* Leaderboard, keep track of the players and there scores
 
 ## Technologies Used
 
 ### Languages
-
 - HTML
   - Page markup.
 - CSS
@@ -101,6 +151,8 @@ Timer is required to level up the User Experience and higher cognitive thinking 
   
   ![colors](assets/images/wireframes/colors-schema.png)
 
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
+
 ### Other Tools
 
 - Wireframe where used be [Balsamiq](https://balsamiq.com/wireframes/)
@@ -111,18 +163,24 @@ This site was built using [GitHub Pages](https://pages.github.com/)
 ### Manual Testing
 The overall performence test on Lighthouse (dev-tools) has a 97% score 
 ![Lighthouse](assets/images/wireframes/lighthouse.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
+
 
 As we go in detail of the Accessibility
 
 ![CSS Accessibility](assets/images/wireframes/css-validator-test-accessibility.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
+
 
 Validator Testing HTML: No errors were returned when passing through the official W3C validator
 
 ![HTML Validation](assets/images/wireframes/html-validator-test.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
 CSS: No errors were found when passing through the official (Jigsaw) validator
 
 ![CSS Validation](assets/images/wireframes/css-validator-test.png)
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
 
 * HTML: has been validated with the W3C HTML5 Validator.
 
@@ -135,16 +193,19 @@ CSS: No errors were found when passing through the official (Jigsaw) validator
 * This same 'trick' is also implied into the buttons of the options choices, here JS is handle them as an object with for example button option 'A' and  inner text empty by initialization but when DOM elements are loaded each option button retrieve the values of the current data array. 
 
 ## Deployment
-There is already a life version online running on the GitHub, [Here](https://harmonica-men.github.io/Astro-Quiz/) the repo is located [here](https://github.com/Harmonica-Men/Astro-Quiz)
+My current Github repository is locate under https://github.com/Harmonica-Men
+
+The life version online is alread running, [Here](https://harmonica-men.github.io/Astro-Quiz/) the repo is located [here](https://github.com/Harmonica-Men/Astro-Quiz)
 
 ### For Deployment over the Internet
 - make a deticated Ubuntu Linux Server (latest version can be downloaded) here - [download](https://ubuntu.com/download/server)
-- go via the SSH-protocol to your local linux webserver and install the lastest Apache2 webserver [download](https://httpd.apache.org/download.cgi) or use the 'sudo apt install apache2' command.
-- Make sure that apache2 services is running on the local server! check whit command 'sudo systemctl status apache2'
+- go via the SSH-protocol to your local linux webserver and install the lastest Apache2 webserver [download](https://httpd.apache.org/download.cgi) or use the `sudo apt install apache2`
+  command.
+- Make sure that apache2 services is running on the local server! check whit command `sudo systemctl status apache2`
 - go 'www' directory and copy via the SCP-protocol a copy of github repository into the your local 'www' directory.
 - a detailed step by step guide: How To Download GitHud Repo, can be found [here](https://www.gitkraken.com/learn/git/github-download#how-to-download-a-github-repository)
 - make sure that 'index.html' file and the corresponding directory hierachy is present in this directory 'www'
-- restart the apache2 service (reload webserver) 'sudo systemctl restart apache2'
+- restart the apache2 service (reload webserver) `sudo systemctl restart apache2`
 - goto your browers and type the specific IP-address or domain-name of your web-server and access the web page.
 - If everything goes well and routed correctly to your network, the website is now published on the internet.
 
@@ -158,3 +219,5 @@ There is already a life version online running on the GitHub, [Here](https://har
 - [pexels](https://www.pexels.com/search/images%20free%20download/): background image and banner, free online pictures libary.
 - The Science Bowl Questions and Answers ASTR-91: [PDF](https://www.csun.edu/science/ref/games/questions/97_astr.pdf)  quiz questions & answers
 - [Favicon](https://www.flaticon.com/free-icons/saturn) free online favicons libary.
+
+<a href="#contents" style="color: lichtblue;">⬆︎ Back to Top</a>
