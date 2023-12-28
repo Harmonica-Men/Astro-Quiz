@@ -1,7 +1,7 @@
 # CONTENTS
 * [Astro-Quiz](#astro-quiz)
   * [Intro](#intro)
-  * [UX](#ux---astronomy-quiz-user-experience)
+  * [UX - Astronomy Quiz User Experience](#ux---astronomy-quiz-user-experience)
     * [Landing Page](#landing-page)
     * [Quiz Interface](#quiz-interface)
       * [Feedback and Learning](#feedback-and-learning)
